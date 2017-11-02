@@ -35,13 +35,46 @@ InterpreteCollector.prototype = Object.create(collectorVisitor.prototype);
 InterpreteCollector.prototype.constructor = InterpreteCollector;
 
 InterpreteCollector.prototype.buscarGlobal = function (nombre) {
-    for (var i = 0; i < this.identifiers.length; i++) {
-        if (this.identifiers[i].nombre === nombre) {
-            return this.identifiers[i];
+    for (var i = 0; i < this.almacenGlobal.length; i++) {
+        if (this.almacenGlobal[i].nombre === nombre) {
+            return this.almacenGlobal[i];
         }
     }
     return null;
 };
+
+InterpreteCollector.prototype.buscarGlobalMetodos = function () {
+    var listaMetodos = [];
+    for (var i = 0; i < almacenGlobal.length; i++) {
+
+        if (almacenGlobal[i] instanceof Variable) {
+            listaMetodos.push(almacenGlobal[i]);
+        }
+    }
+    return listaMetodos;
+};
+InterpreteCollector.prototype.buscarGlobalVariables = function () {
+    var listaVariables = [];
+    for (var i = 0; i < almacenGlobal.length; i++) {
+
+        if (almacenGlobal[i] instanceof Variable) {
+            listaVariables.push(almacenGlobal[i]);
+        }
+    }
+    return listaVariables;
+};
+InterpreteCollector.prototype.buscarGlobalClases = function () {
+    var listaClases = [];
+    for (var i = 0; i < almacenGlobal.length; i++) {
+
+        if (almacenGlobal[i] instanceof Variable) {
+            listaClases.push(almacenGlobal[i]);
+        }
+    }
+    return listaClases;
+};
+
+
 
 InterpreteCollector.prototype.resetearAlmacen = function () {
     almacenGlobal = [];
@@ -304,9 +337,13 @@ InterpreteCollector.prototype.visitStatDesignatorRule = function(ctx) {
     //designator ( ASIGN expr | PIZQ actPars? PDER  | DOBLEMAS | DOBLEMENOS ) PyCOMA
 
     var designatorContext = this.visit(ctx.designator());
+    //IDENTIFIER ( POINT IDENTIFIER | CORCHETEIZQ expr CORCHETEDER )*
+    var identDesignator = designatorContext.IDENTIFIER(0);
 
     if(ctx.ASIGN){
+        if(designatorContext.POINT){
 
+        }
     }
 
     return this.visitChildren(ctx);
