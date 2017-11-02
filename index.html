@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>WebEditor</title>
+
+	<!--<script src="https://cdn.alloyui.com/3.0.1/aui/aui-min.js"></script>-->
+	<script src="src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="lib/require.js"></script>
+
+	<script src = "initializer.js"></script>
+
+	<!--CDN para css de bootstrap-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<style type="text/css">
+		.bg-primary {
+    		background-color: #616161;
+    		width: 100%;
+		}
+
+		.treePrinter{
+			height: 400px;
+			overflow-y: scroll;
+		}
+
+	</style>
+
+</head>
+
+<body>
+
+	<nav class="navbar navbar-default">
+
+  		<div class="container-fluid">
+
+	    	<div class="navbar-header">
+	      		<a class="navbar-brand" href="#">WebEditor</a>
+	    	</div>
+
+		    <ul class="nav navbar-nav">
+		      <li><a href="#"><span id="play" class="glyphicon glyphicon-play"></span></a></li>
+		      <li><a href="#"><span id="fileChooser" class="glyphicon glyphicon-folder-open"></span></a></li>
+		      <li><a href="#">Watch <span class="glyphicon glyphicon-tree-deciduous"></span></a></li>
+                <li><a href="#">Watch <span id="execute" class="glyphicon glyphicon-tree-deciduous"></span></a></li>
+		    </ul>
+
+  		</div>
+
+	</nav>
+
+	<!--Sistema de grilla responsive-->
+	<div class="container">
+
+	  	<div class="row">
+	    	<div class="col-md-7">
+
+	    		<!--Editor de texto-->
+				<div id="myEditor" style="background-color: black; height: 400px; width: 100%;">class AllProds
+					const int nPoints = 2;
+					const char exclaim = '!';
+					const char caracter_raro = 't';
+					float i;
+					int test2;
+
+					class Point {
+					int x, y;
+					float i;
+					}
+
+					char[] msg;
+					int[] pArr;
+					boolean test1;
+					{
+					void WriteError ()
+					int i;
+					boolean test2;
+					{
+
+					i = 0;
+					test1 = true;   //verificación de alcances
+					test2 = test1;  //verificación de alcances cuando hay una global llamada "test2"
+					while(i < len(msg)){write(msg[i]);i++;}
+
+					for(i;i < len(msg);i++;){write(msg[i]);}
+					write(exclaim);
+					while (i > 0) {
+					i--;
+					if (i < 3 && test1==true) break;
+					write(msg[i], 2);
+					}
+					}
+
+					int GetX (Point p) { p = new Point; return p.i; } // error de tipos, en caso de reconocerlo, cambiar a "return p.x"
+
+					void SetX (int x, Point p) {
+					if (x > -10 && x <= 9 || x == 4*3/4%4+12-11*(2147483647/(-2147483647-1)%2) )
+					p.x = x;
+
+					else
+					i= WriteError(3); // error de alcances porque no existe este parametro en la definicion
+
+					return i; //error porque no es funcion;
+					}
+
+
+					int SetMsg () {
+					msg = new char[5];
+					msg[0] = 'E';
+					msg[1] = 'r';
+					msg[2] = 'r';
+					msg[3] = 'r';
+					msg[4] = msg[3];
+					msg[3] = caracter_raro; //verificacion de constantes globales
+					write(len(msg),1); //verificacion de métodos predefinidos
+
+					//verificar error de no existencia de retorno en funcion
+					}
+
+					void SetPoints ()
+					int i;
+					{
+					pArr = new int[nPoints];
+					i = 0;
+					while (i < len(pArr)) {
+					pArr[i] = new Point; //error de tipos por la definicion de clases que solo permiten tipos simples
+					pArr[i] = i;
+					pArr[i] = 3.14; //debe dar error de tipos.
+					i++;
+					}
+					}
+
+					void Main ()
+					int i;
+					Point algo;
+					{
+					SetMsg(); //puede o no ser error que para la llamada a una funcion no se utilice su retorno
+					SetPoints();
+					read(i);
+					if (i < nPoints) {
+					write(GetX(algo));
+					}
+					else
+					WriteError();
+
+
+					}
+					}</div>
+
+	    	</div>
+
+	    	<div class="col-md-5">
+				<textarea style="height: 400px; width: 455px;" id="messages"></textarea>
+	    	</div>
+
+	  	</div>
+
+	  	<div class="row">
+		    <div class="col-md-12">
+		    	<!--Aqui se mostraran los errores que salgan de la compilacion en general-->
+				<div class="container bg-primary">
+					<form>
+					    <div class="form-group">
+					      <label for="comment">Console</label>
+					      <textarea style="color:red" class="form-control" rows="7" id="comment" readonly></textarea>
+						</div>
+					</form>
+				</div>
+		    </div>
+	  	</div>
+
+	</div>
+
+
+	<input id="file-input" type="file" name="name" style="display: none;" />
+
+</body>
+
+</html>
