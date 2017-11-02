@@ -16,6 +16,20 @@ function Clase(nombre,ctx){
     this.nombre = nombre;
     this.atributos = []; //se guardan objetos de tipo variable.
     this.contexto = ctx;
+    this.buscarAtributos = function (nombre) {
+        for(var i = 0; i < this.atributos.length; i++){
+            if(this.atributos[i].nombre === nombre){
+                return this.atributos[i];
+            }
+        }
+        return null;
+    }
+}
+
+function Arreglo(nombre, ctx){
+    this.nombre = nombre;
+    this.contexto = ctx;
+    this.items = [];
 }
 
 function Metodo(nombre,bodyContext) {
@@ -96,7 +110,7 @@ InterpreteCollector.prototype.visitProgramN = function(ctx) {
         var DefaultValue = null;
 
          if (tipoDato == "string")
-            DefaultValue = "";
+            DefaultValue 0= "";
          else if(tipoDato == "char")
             DefaultValue = '';
          else if(tipoDato == "int")
@@ -339,12 +353,35 @@ InterpreteCollector.prototype.visitStatDesignatorRule = function(ctx) {
     var designatorContext = this.visit(ctx.designator());
     //IDENTIFIER ( POINT IDENTIFIER | CORCHETEIZQ expr CORCHETEDER )*
     var identDesignator = designatorContext.IDENTIFIER(0);
+    X[2]
+    Point.x
+    if(designatorContext.POINT()!== null){
 
-    if(ctx.ASIGN){
-        if(designatorContext.POINT){
+        var clasecita = this.buscarGlobal(identDesignator);
 
-        }
+        var identDesignator2 = designatorContext.IDENTIFIER(1);
+         var variablita = clasecita.buscarAtributos(identDesignator2);
+
+         if(ctx.ASIGN() !== null){
+             //variablita.valor = this.visit(ctx.expr());
+             variablita.valor = 5;
+         }
+         if(ctx.DOBLEMAS() !== null){
+             variablita.valor++;
+         }
+         if(ctx.DOBLEMENOS() !== null){
+             variablita.valor--;
+         }
+
     }
+    if(designatorContext.CORCHETEIZQ()){
+        var exprDesignator = this.visit(ctx.expr());
+
+        buscarGlobalVariables()
+    }
+
+
+
 
     return this.visitChildren(ctx);
 };
@@ -489,7 +526,11 @@ InterpreteCollector.prototype.visitFactExpreRule = function(ctx) {
     return this.visitChildren(ctx);
 };
 
+InterpreteCollector.prototype.visitFactNewArrayRule = function(ctx) {
 
+
+    return this.visitChildren(ctx);
+};
 // Visit a parse tree produced by miniCSharpParser#designatorRule.
 InterpreteCollector.prototype.visitDesignatorRule = function(ctx) {
     //IDENTIFIER ( POINT IDENTIFIER | CORCHETEIZQ expr CORCHETEDER )*

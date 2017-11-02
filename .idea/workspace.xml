@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="04cf0e5a-deee-414d-9aa8-0d2f10b15b3c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generated/miniCSharpParser.js" afterPath="$PROJECT_DIR$/generated/miniCSharpParser.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generated/miniCSharpParserVisitor.js" afterPath="$PROJECT_DIR$/generated/miniCSharpParserVisitor.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generated/miniCSharpScanner.js" afterPath="$PROJECT_DIR$/generated/miniCSharpScanner.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interprete/InterpreteCollector.js" afterPath="$PROJECT_DIR$/interprete/InterpreteCollector.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,7 +15,6 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="MiniC#Project" />
   </component>
@@ -36,60 +33,9 @@
       <file leaf-file-name="miniCSharpParserVisitor.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/generated/miniCSharpParserVisitor.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2550">
-              <caret line="151" column="0" lean-forward="false" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
-              <folding>
-                <marker date="1509605093699" expanded="true" signature="293:352" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="644:681" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="822:859" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="996:1033" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="1172:1209" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="1350:1387" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="1528:1565" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="1714:1751" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="1896:1933" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="2076:2113" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="2260:2297" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="2448:2485" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="2634:2671" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="2820:2857" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="2990:3027" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="3162:3199" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="3338:3375" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="3518:3555" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="3694:3731" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="3872:3909" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="4046:4083" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="4222:4259" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="4398:4435" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="4576:4613" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="4744:4781" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="4916:4953" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="5094:5131" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="5268:5305" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="5442:5479" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="5608:5645" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="5774:5811" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="5960:5997" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="6138:6175" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="6322:6359" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="6510:6547" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="6682:6719" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="6864:6901" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="7040:7077" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="7218:7255" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="7406:7443" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="7592:7629" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="7776:7813" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="7970:8007" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="8154:8191" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="8348:8385" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="8522:8559" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="8700:8737" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="8874:8911" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="9048:9085" ph="{...}" />
-                <marker date="1509605093699" expanded="true" signature="9236:9273" ph="{...}" />
-              </folding>
+            <state relative-caret-position="384">
+              <caret line="225" column="0" lean-forward="false" selection-start-line="225" selection-start-column="0" selection-end-line="227" selection-end-column="2" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -97,11 +43,21 @@
       <file leaf-file-name="InterpreteCollector.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/interprete/InterpreteCollector.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-115">
-              <caret line="254" column="12" lean-forward="true" selection-start-line="254" selection-start-column="12" selection-end-line="254" selection-end-column="12" />
+            <state relative-caret-position="697">
+              <caret line="128" column="0" lean-forward="true" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
               <folding>
                 <element signature="e#0#44#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="miniCSharpParser.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/generated/miniCSharpParser.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -121,8 +77,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+            <state relative-caret-position="-2278">
+              <caret line="19" column="24" lean-forward="true" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -141,8 +97,8 @@
       <file leaf-file-name="miniCSharpParser.g4" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/miniCSharpParser.g4">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="18" column="35" lean-forward="true" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+            <state relative-caret-position="221">
+              <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -159,7 +115,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>visitfactNumberRule</find>
       <find>visitFactNum</find>
       <find>visitfactCharConstRule</find>
       <find>visitfactTrueOrFalseRule</find>
@@ -189,6 +144,7 @@
       <find>designatorRule</find>
       <find>block</find>
       <find>visittypeCharDeclRule</find>
+      <find>visitfactNewArrayRule</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -218,8 +174,8 @@
         <option value="$PROJECT_DIR$/interprete/InterpreterExecutor.js" />
         <option value="$PROJECT_DIR$/initializer.js" />
         <option value="$PROJECT_DIR$/oldFiles/AContextual.js" />
-        <option value="$PROJECT_DIR$/interprete/InterpreteCollector.js" />
         <option value="$PROJECT_DIR$/miniCSharpParser.g4" />
+        <option value="$PROJECT_DIR$/interprete/InterpreteCollector.js" />
       </list>
     </option>
   </component>
@@ -229,11 +185,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1376" />
-    <option name="height" value="784" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-7" />
+    <option name="width" value="697" />
+    <option name="height" value="775" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -253,19 +208,36 @@
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MiniCSProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MiniCSProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
+          <expand>
+            <path>
+              <item name="MiniCSProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MiniCSProject" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MiniCSProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MiniCSProject" type="462c0819:PsiDirectoryNode" />
+              <item name="generated" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="MiniCSProject" type="cbb8eebc:String" user="MiniCSProject" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="MiniCSProject" type="cbb8eebc:String" user="MiniCSProject" />
+              <item name="generated" type="cbb8eebc:String" user="generated" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -276,13 +248,13 @@
     <property name="SearchEverywhereHistoryKey" value="module.js&#9;null&#9;null" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
     <property name="$PROJECT_DIR$/miniCSharpScanner.g4::/auto-gen" value="false" />
-    <property name="$PROJECT_DIR$/miniCSharpScanner.g4::/output-dir" value="C:\Users\BryanH\WebstormProjects\MiniCSProject" />
+    <property name="$PROJECT_DIR$/miniCSharpScanner.g4::/output-dir" value="C:\Users\Kenneth\Desktop\MiniCSProject" />
     <property name="$PROJECT_DIR$/miniCSharpScanner.g4::/package" value="generated" />
     <property name="$PROJECT_DIR$/miniCSharpScanner.g4::/language" value="JavaScript" />
     <property name="$PROJECT_DIR$/miniCSharpScanner.g4::/gen-listener" value="false" />
     <property name="$PROJECT_DIR$/miniCSharpScanner.g4::/gen-visitor" value="false" />
     <property name="$PROJECT_DIR$/miniCSharpParser.g4::/auto-gen" value="false" />
-    <property name="$PROJECT_DIR$/miniCSharpParser.g4::/output-dir" value="C:\Users\BryanH\WebstormProjects\MiniCSProject" />
+    <property name="$PROJECT_DIR$/miniCSharpParser.g4::/output-dir" value="C:\Users\Kenneth\Desktop\MiniCSProject" />
     <property name="$PROJECT_DIR$/miniCSharpParser.g4::/package" value="generated" />
     <property name="$PROJECT_DIR$/miniCSharpParser.g4::/language" value="JavaScript" />
     <property name="$PROJECT_DIR$/miniCSharpParser.g4::/gen-listener" value="false" />
@@ -304,6 +276,119 @@
       <recent name="C:\Users\BryanH\WebstormProjects\MiniC#Project\parserVisitor" />
     </key>
   </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/generated/miniCSharpParser.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/generated/miniCSharpParserVisitor.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/generated/miniCSharpScanner.js</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -317,20 +402,15 @@
     </option>
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.html (1)">
-    <configuration default="false" name="probando.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/MiniC#Project/probando.html">
-      <method />
-    </configuration>
-    <configuration default="false" name="PrettyPrint.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="$PROJECT_DIR$/oldFiles/PrettyPrint.js" working-dir="$PROJECT_DIR$/generated">
-      <method />
-    </configuration>
-    <configuration default="false" name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/MiniC#Project/index.html">
-      <method />
-    </configuration>
-    <configuration default="false" name="index.html (1)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/MiniCSProject/index.html">
-      <method />
-    </configuration>
-    <configuration default="false" name="AContextual.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="$PROJECT_DIR$/oldFiles/AContextual.js" working-dir="$PROJECT_DIR$/generated">
-      <method />
+    <configuration name="AContextual.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="$PROJECT_DIR$/oldFiles/AContextual.js" working-dir="$PROJECT_DIR$/generated" />
+    <configuration name="PrettyPrint.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="$PROJECT_DIR$/oldFiles/PrettyPrint.js" working-dir="$PROJECT_DIR$/generated" />
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <method />
@@ -369,15 +449,6 @@
       <option name="filePath" />
       <method />
     </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
       <command value="run" />
       <scripts />
@@ -398,6 +469,9 @@
       <recursive>false</recursive>
       <method />
     </configuration>
+    <configuration name="index.html (1)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/MiniCSProject/index.html" />
+    <configuration name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/MiniC#Project/index.html" />
+    <configuration name="probando.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/MiniC#Project/probando.html" />
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.probando.html" />
       <item index="1" class="java.lang.String" itemvalue="Node.js.PrettyPrint.js" />
@@ -490,7 +564,6 @@
       <workItem from="1509587520948" duration="7824000" />
       <workItem from="1509596720778" duration="613000" />
       <workItem from="1509600537532" duration="46000" />
-      <workItem from="1509600784273" duration="1325000" />
     </task>
     <task id="LOCAL-00001" summary="asdasd">
       <created>1509600572035</created>
@@ -503,7 +576,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="453577000" />
+    <option name="totallyTimeSpent" value="459542000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -515,13 +588,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1376" height="784" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2264574" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22693452" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286385" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32104453" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0030864198" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32457495" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -530,16 +603,27 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5652842" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286385" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32253087" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32457495" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32718894" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22693452" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962519" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5652842" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="processedProjectFiles" value="true" />
+    <option name="version" value="1" />
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.tokens" />
@@ -770,13 +854,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/generated/miniCSharpParser.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/oldFiles/PrettyPrint.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -826,78 +903,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/generated/miniCSharpParserVisitor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2550">
-          <caret line="151" column="0" lean-forward="false" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
-          <folding>
-            <marker date="1509605093699" expanded="true" signature="293:352" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="644:681" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="822:859" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="996:1033" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="1172:1209" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="1350:1387" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="1528:1565" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="1714:1751" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="1896:1933" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="2076:2113" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="2260:2297" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="2448:2485" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="2634:2671" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="2820:2857" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="2990:3027" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="3162:3199" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="3338:3375" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="3518:3555" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="3694:3731" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="3872:3909" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="4046:4083" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="4222:4259" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="4398:4435" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="4576:4613" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="4744:4781" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="4916:4953" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="5094:5131" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="5268:5305" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="5442:5479" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="5608:5645" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="5774:5811" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="5960:5997" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="6138:6175" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="6322:6359" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="6510:6547" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="6682:6719" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="6864:6901" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="7040:7077" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="7218:7255" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="7406:7443" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="7592:7629" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="7776:7813" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="7970:8007" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="8154:8191" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="8348:8385" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="8522:8559" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="8700:8737" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="8874:8911" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="9048:9085" ph="{...}" />
-            <marker date="1509605093699" expanded="true" signature="9236:9273" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/interprete/InterpreteCollector.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-115">
-          <caret line="254" column="12" lean-forward="true" selection-start-line="254" selection-start-column="12" selection-end-line="254" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#44#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/miniCSharpScanner.g4">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
+        <state relative-caret-position="475">
           <caret line="36" column="15" lean-forward="false" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="15" />
           <folding />
         </state>
@@ -905,16 +913,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+        <state relative-caret-position="-2278">
+          <caret line="19" column="24" lean-forward="true" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generated/miniCSharpParser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generated/miniCSharpParserVisitor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="225" column="0" lean-forward="false" selection-start-line="225" selection-start-column="0" selection-end-line="227" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interprete/InterpreteCollector.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="128" column="0" lean-forward="true" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#44#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/miniCSharpParser.g4">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="18" column="35" lean-forward="true" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+        <state relative-caret-position="221">
+          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding />
         </state>
       </provider>
