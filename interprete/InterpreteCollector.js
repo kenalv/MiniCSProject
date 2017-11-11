@@ -516,12 +516,6 @@ InterpreteCollector.prototype.visitStatIfRule = function(ctx) {
 
 
 
-    if(ParentesisDespuesDelIf > 0){
-
-
-
-    }
-
 
     return this.visitChildren(ctx);
 };
