@@ -33,6 +33,7 @@ var almacenGlobal = [];
 var ejecutar = false;
 var pilaDeLlamadas = [];//Esta pila cargara objetos de tipo Método(El metodo que este en el tope de la pila es el que esta ejecutando, cada metodo tiene su propio almacen local).
 var salirPorBreakOReturn = false; //bandera que indica si se debe cortar la lectura de statements de un método(a causa de un break o un return).
+var ejecuntandoBlockAnidado = false;
 
 function Variable(nombre,valor,ctx){
     this.nombre = nombre;
@@ -70,6 +71,7 @@ function InterpreteCollector() {
     almacenGlobal = [];
     ejecutar = false; //se indica que no se entrara en modo de ejecucion sino de recoleccion para el almacen.
     salirPorBreakOReturn = false;
+    ejecuntandoBlockAnidado = false;
     collectorVisitor.call(this);
     return this;
 }
@@ -460,7 +462,7 @@ InterpreteCollector.prototype.visitStatDesignatorRule = function(ctx) {
             //Se setean los parametros que vienen en actPars
 
             if (ctx.actPars() !== null){//si la llamada a metodo es con parametros.
-                
+
             }
 
             this.visitBlockRule(objetoMetodo.blockContext);//Se llama el visit block con el contexto del metodo ya declarado.
@@ -564,6 +566,9 @@ InterpreteCollector.prototype.visitBlockRule = function(ctx) {
     //BRACKETIZQ ( statement )* BRACKETDER
 
     if (ejecutar){
+
+        ***************************
+
         var objetoMetodoOriginal = this.buscarGlobal(ctx.nombreDeMetodo);
 
         var copiaVariablesLocales = this.copiarVariables(objetoMetodoOriginal.variablesLocales);
