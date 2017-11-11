@@ -12,6 +12,15 @@ var operadores = {"+": function (x,y) {return x + y;},
                   "%": function (x,y) {return x / y;}
 };
 
+var operadores2 = {
+    "==":function (x,y) {return (x === y);},
+    "!=":function (x,y) {return (x !== y);},
+    ">":function (x,y) {return (x > y);},
+    ">=":function (x,y) {return (x >= y);},
+    "<":function (x,y) {return (x < y);},
+    "<=":function (x,y) {return (x <= y)}
+}
+
 //Constructor para el objeto AlmacenLocal
 function AlmacenLocal() { //representa el almacen local de una función.
     this.identifiers = []; //se guardara una lista de parametros y una lista con variables locales. todas de tipo Variable.
@@ -146,6 +155,9 @@ InterpreteCollector.prototype.copiarVariables = function (arregloAcopiar) {
 
 // Visit a parse tree produced by miniCSharpParser#programN.
 InterpreteCollector.prototype.visitProgramN = function(ctx) {
+
+    //console.log("Resultado: " + (true && true));
+
 
     for (var i = 0; i < ctx.constDecl().length; i++)
     {
@@ -494,18 +506,46 @@ InterpreteCollector.prototype.visitStatDesignatorRule = function(ctx) {
 
 // Visit a parse tree produced by miniCSharpParser#statIfRule.
 InterpreteCollector.prototype.visitStatIfRule = function(ctx) {
+    //IF PIZQ condition PDER statement ( ELSE statement )?
+    ejecuntandoBlockAnidado = false;
+
+    //condition	: condTerm ( OR condTerm )*
+    var conditionContext = this.visit(ctx.condition());
+
+    var ParentesisDespuesDelIf = conditionContext.PIZQ().length;
+
+
+
+    if(ParentesisDespuesDelIf > 0){
+
+
+
+    }
+
+
     return this.visitChildren(ctx);
 };
 
 
 // Visit a parse tree produced by miniCSharpParser#statForRule.
 InterpreteCollector.prototype.visitStatForRule = function(ctx) {
+
+    ejecuntandoBlockAnidado = true;
+
+
+
+
+
     return this.visitChildren(ctx);
 };
 
 
 // Visit a parse tree produced by miniCSharpParser#statWhileRule.
 InterpreteCollector.prototype.visitStatWhileRule = function(ctx) {
+
+    ejecuntandoBlockAnidado = true;
+
+
     return this.visitChildren(ctx);
 };
 
@@ -651,13 +691,54 @@ InterpreteCollector.prototype.visitConditionnRule = function(ctx) {
 
 // Visit a parse tree produced by miniCSharpParser#condTermRule.
 InterpreteCollector.prototype.visitCondTermRule = function(ctx) {
+
+
+   // condFact ( AND condFact )*
+        var condF1 = this.visit(ctx.condFact(0));
+
+        for(var i = 0; i < ctx.condFact().length() - 1; i++){
+
+            if(ctx.AND().getSymbol() === '&&'){
+                var condF2 = this.visit(ctx.condFact(i));
+            }
+        }
+
+
     return this.visitChildrn(ctx);
 };
 
 
 // Visit a parse tree produced by miniCSharpParser#condFactRule.
 InterpreteCollector.prototype.visitCondFactRule = function(ctx) {
-    return this.visitChildren(ctx);
+    //expr relop expr
+
+    var expr1 = this.visit(ctx.expr(0));
+    var signo = this.visit(ctx.relop());
+    var expr2 = this.visit(ctx.expr(1));
+
+        //parseInt
+    if(ejecuntandoBlockAnidado){
+        return ctx;
+    }else {
+        if (signo === '==') {
+            return operadores2[signo](expr1, expr2);
+        }
+        if (signo === '!=') { // DIFERENTE
+            return operadores2[signo](expr1, expr2);
+        }
+        if (signo === '>') { //MAYORQUE
+            return operadores2[signo](expr1, expr2);
+        }
+        if (signo === '>=') { //MAYORIGUALQUE
+            return operadores2[signo](expr1, expr2);
+        }
+        if (signo === '<') { //MENORQUE
+            return operadores2[signo](expr1, expr2);
+        }
+        if (signo === '<=') { //MENORIGUALQUE
+            return operadores2[signo](expr1, expr2);
+        }
+    }
 };
 
 
@@ -836,37 +917,37 @@ InterpreteCollector.prototype.visitDesignatorRule = function(ctx) {
 
 // Visit a parse tree produced by miniCSharpParser#relopIgualigualRule.
 InterpreteCollector.prototype.visitRelopIgualigualRule = function(ctx) {
-    return this.visitChildren(ctx);
+    return ctx.IGUALIGUAL().getSymbol();
 };
 
 
 // Visit a parse tree produced by miniCSharpParser#relopDiferenteRule.
 InterpreteCollector.prototype.visitRelopDiferenteRule = function(ctx) {
-    return this.visitChildren(ctx);
+    return ctx.DIFERENTE().getSymbol();
 };
 
 
 // Visit a parse tree produced by miniCSharpParser#relopMayorqueRule.
 InterpreteCollector.prototype.visitRelopMayorqueRule = function(ctx) {
-    return this.visitChildren(ctx);
+    return ctx.MAYORQUE().getSymbol();
 };
 
 
 // Visit a parse tree produced by miniCSharpParser#relopMayorigualqueRule.
 InterpreteCollector.prototype.visitRelopMayorigualqueRule = function(ctx) {
-    return this.visitChildren(ctx);
+    return ctx.MAYORIGUALQUE().getSymbol();
 };
 
 
 // Visit a parse tree produced by miniCSharpParser#relopMenorQueRule.
 InterpreteCollector.prototype.visitRelopMenorQueRule = function(ctx) {
-    return this.visitChildren(ctx);
+    return ctx.MENORQUE().getSymbol();
 };
 
 
 // Visit a parse tree produced by miniCSharpParser#relopMenorigualqueRule.
 InterpreteCollector.prototype.visitRelopMenorigualqueRule = function(ctx) {
-    return this.visitChildren(ctx);
+    return ctx.MENORIGUALQUE().getSymbol();
 };
 
 
