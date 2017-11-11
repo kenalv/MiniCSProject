@@ -499,6 +499,7 @@ InterpreteCollector.prototype.visitStatDesignatorRule = function(ctx) {
 // Visit a parse tree produced by miniCSharpParser#statIfRule.
 InterpreteCollector.prototype.visitStatIfRule = function(ctx) {
     //IF PIZQ condition PDER statement ( ELSE statement )?
+    ejecuntandoBlockAnidado = false;
 
     //condition	: condTerm ( OR condTerm )*
     var conditionContext = this.visit(ctx.condition());
@@ -520,12 +521,23 @@ InterpreteCollector.prototype.visitStatIfRule = function(ctx) {
 
 // Visit a parse tree produced by miniCSharpParser#statForRule.
 InterpreteCollector.prototype.visitStatForRule = function(ctx) {
+
+    ejecuntandoBlockAnidado = true;
+
+
+
+
+
     return this.visitChildren(ctx);
 };
 
 
 // Visit a parse tree produced by miniCSharpParser#statWhileRule.
 InterpreteCollector.prototype.visitStatWhileRule = function(ctx) {
+
+    ejecuntandoBlockAnidado = true;
+
+
     return this.visitChildren(ctx);
 };
 
