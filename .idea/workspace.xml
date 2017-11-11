@@ -23,8 +23,8 @@
       <file leaf-file-name="InterpreteCollector.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/interprete/InterpreteCollector.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="581" column="9" lean-forward="true" selection-start-line="581" selection-start-column="9" selection-end-line="581" selection-end-column="9" />
+            <state relative-caret-position="182">
+              <caret line="74" column="32" lean-forward="true" selection-start-line="74" selection-start-column="32" selection-end-line="74" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -33,8 +33,8 @@
       <file leaf-file-name="miniCSharpParser.g4" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/miniCSharpParser.g4">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="47" column="122" lean-forward="false" selection-start-line="47" selection-start-column="113" selection-end-line="47" selection-end-column="122" />
+            <state relative-caret-position="608">
+              <caret line="47" column="50" lean-forward="true" selection-start-line="47" selection-start-column="50" selection-end-line="47" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -70,17 +70,17 @@
       <find>visitprogramN</find>
       <find>visitmethodDeclRule</find>
       <find>visitstatDes</find>
-      <find>visitstatDesignatorRule</find>
       <find>visitfactNewArrayRule</find>
       <find>visitvarDeclaRule</find>
       <find>visitBlockRule</find>
-      <find>visitblockRule</find>
       <find>visitexprRule</find>
       <find>alert</find>
       <find>visitconstDeclaRule</find>
       <find>visitstatReturnRule</find>
       <find>visitactParsRule</find>
       <find>visitstatBlockRule</find>
+      <find>visitblockRule</find>
+      <find>visitstatDesignatorRule</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -388,7 +388,7 @@
       <workItem from="1510299278588" duration="12475000" />
       <workItem from="1510345476300" duration="12918000" />
       <workItem from="1510371703069" duration="9081000" />
-      <workItem from="1510385823497" duration="2070000" />
+      <workItem from="1510385823497" duration="6487000" />
     </task>
     <task id="LOCAL-00001" summary="asdasd">
       <created>1509600572035</created>
@@ -411,11 +411,18 @@
       <option name="project" value="LOCAL" />
       <updated>1510386144311</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Se creo una lista &quot;pila de llamadas&quot; que guarda objetos de tipo Metodo, el metodo que esta en el tope de la pila es el que se esta ejecutando. Ademas elimine los metodos de busqueda, 3 metodos de busqueda borrados, solo quedó el de busqueda global.">
+      <created>1510387918785</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1510387918786</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="610383000" />
+    <option name="totallyTimeSpent" value="614800000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -780,16 +787,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/miniCSharpParser.g4">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="47" column="122" lean-forward="false" selection-start-line="47" selection-start-column="113" selection-end-line="47" selection-end-column="122" />
+        <state relative-caret-position="608">
+          <caret line="47" column="50" lean-forward="true" selection-start-line="47" selection-start-column="50" selection-end-line="47" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/interprete/InterpreteCollector.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="581" column="9" lean-forward="true" selection-start-line="581" selection-start-column="9" selection-end-line="581" selection-end-column="9" />
+        <state relative-caret-position="182">
+          <caret line="74" column="32" lean-forward="true" selection-start-line="74" selection-start-column="32" selection-end-line="74" selection-end-column="32" />
           <folding />
         </state>
       </provider>

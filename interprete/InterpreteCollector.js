@@ -397,86 +397,94 @@ InterpreteCollector.prototype.visitTypeStringDeclRule = function(ctx) {
 InterpreteCollector.prototype.visitStatDesignatorRule = function(ctx) {
     //designator ( ASIGN expr | PIZQ actPars? PDER  | DOBLEMAS | DOBLEMENOS ) PyCOMA
 
-
-    var designatorContext = this.visit(ctx.designator());
-    //IDENTIFIER ( POINT IDENTIFIER | CORCHETEIZQ expr CORCHETEDER )*
-
-    var identDesignator = designatorContext.IDENTIFIER(0);
-
-    var puntosDespuesDelPrimerIdentificador = designatorContext.POINT().length;
-    var corchetesDespuesDelPrimerIdentificador = designatorContext.CORCHETEIZQ().length;
-
-    if(puntosDespuesDelPrimerIdentificador > 0) {
-
-        var variableConClase = this.buscarLocalYglobalmente(identDesignator);
-        var nombreAtributo = designatorContext.IDENTIFIER(1);
-        var objetoVariable = variableConClase.valor.buscarAtributos(nombreAtributo);
-
-        if (ctx.ASIGN() !== null){ //Se asignara algun valor a un atributo de clase.
-            var valorAasignar = this.visit(ctx.expr());
-            alert("Se asignó a un atributo de clase el valor"+ valorAasignar);
-            objetoVariable.valor = valorAasignar;
-             alert(objetoVariable.valor);
-        }
-
-         if(ctx.DOBLEMAS() !== null){
-            alert("Se aumento una unidad el atributo de la clase");
-             objetoVariable.valor += 1;
-         }
-
-         if(ctx.DOBLEMENOS() !== null){
-             alert("Se decremento una unidad el atributo de la clase");
-             objetoVariable.valor += -1;
-         }
-    }else if(corchetesDespuesDelPrimerIdentificador > 0){ //si es una asignacion a un arreglo.
-        var variableQueAlmacenaArreglo = this.buscarLocalYglobalmente(identDesignator);
-        var valorEntreCorchetes = this.visit(designatorContext.expr()); //indice del elemento del arreglo al que se le va a realizar alguna operacion.
-
-        if (ctx.ASIGN() !== null){ //Se asignara algun valor a un atributo de clase.
-            var valorDelELemento = this.visit(ctx.expr());
-            variableQueAlmacenaArreglo.valor[valorEntreCorchetes] = valorDelELemento;
-            alert("SE asigno valor al indice de un arreglo"+ valorDelELemento+" en el indice "+valorEntreCorchetes);
-        }
-
-        if(ctx.DOBLEMAS() !== null){
-            alert("Se aumento una unidad el elemento de un arreglo");
-            variableQueAlmacenaArreglo.valor[valorEntreCorchetes] += 1;
-        }
-
-        if(ctx.DOBLEMENOS() !== null){
-            alert("Se decrementa una unidad el elemento del arreglo");
-            variableQueAlmacenaArreglo.valor[valorEntreCorchetes] -= 1;
-        }
+    /*
+    Porque seguramente este statement pertenece a un for o while y su contexto(ctx) se utiliza para saber si es DOBLEMAS Ó
+    DOBLEMENOS para saber si se incrementa o decrementa el ciclo o for que se ejecutará.
+     */
+    if (ejecuntandoBlockAnidado){
+        return ctx;
     }
-    else{ //Si no existe un punto ni un corchete quiere decir que se trata de una variable normal.
-        var variableNormal = this.buscarLocalYglobalmente(identDesignator);
+    else{
+        var designatorContext = this.visit(ctx.designator());
+        //IDENTIFIER ( POINT IDENTIFIER | CORCHETEIZQ expr CORCHETEDER )*
 
-        if (ctx.ASIGN() !== null){
-            variableNormal.valor = this.visit(ctx.expr()); //Puede ser un valor primitivo o un objeto tipo clase.
-            alert("Se asignó "+variableNormal.valor+" a la variable "+variableNormal.nombre);
-        }
+        var identDesignator = designatorContext.IDENTIFIER(0);
 
-        if (ctx.PIZQ() !== null){ //Se hara una llamada a funcion.
-            var objetoMetodo = this.buscarGlobal(identDesignator);// se obtiene el objeto metodo de la declaracion.
+        var puntosDespuesDelPrimerIdentificador = designatorContext.POINT().length;
+        var corchetesDespuesDelPrimerIdentificador = designatorContext.CORCHETEIZQ().length;
 
-            //Se setean los parametros que vienen en actPars
+        if(puntosDespuesDelPrimerIdentificador > 0) {
 
-            if (ctx.actPars() !== null){//si la llamada a metodo es con parametros.
+            var variableConClase = this.buscarLocalYglobalmente(identDesignator);
+            var nombreAtributo = designatorContext.IDENTIFIER(1);
+            var objetoVariable = variableConClase.valor.buscarAtributos(nombreAtributo);
 
+            if (ctx.ASIGN() !== null){ //Se asignara algun valor a un atributo de clase.
+                var valorAasignar = this.visit(ctx.expr());
+                alert("Se asignó a un atributo de clase el valor"+ valorAasignar);
+                objetoVariable.valor = valorAasignar;
+                alert(objetoVariable.valor);
             }
 
-            this.visitBlockRule(objetoMetodo.blockContext);//Se llama el visit block con el contexto del metodo ya declarado.
-            alert("Termino la ejecucion del método " + objetoMetodo.nombre);
-        }
+            if(ctx.DOBLEMAS() !== null){
+                alert("Se aumento una unidad el atributo de la clase");
+                objetoVariable.valor += 1;
+            }
 
-        if (ctx.DOBLEMAS() !== null){ //Se hará un incremento a la variable.
-            alert("Se incremento en 1 el valor de la variable "+variableNormal.nombre);
-            variableNormal.valor += 1;
-        }
+            if(ctx.DOBLEMENOS() !== null){
+                alert("Se decremento una unidad el atributo de la clase");
+                objetoVariable.valor += -1;
+            }
+        }else if(corchetesDespuesDelPrimerIdentificador > 0){ //si es una asignacion a un arreglo.
+            var variableQueAlmacenaArreglo = this.buscarLocalYglobalmente(identDesignator);
+            var valorEntreCorchetes = this.visit(designatorContext.expr()); //indice del elemento del arreglo al que se le va a realizar alguna operacion.
 
-        if (ctx.DOBLEMENOS() !== null){ //Se hara un decremento a una variable.
-            alert("Se decrementó en 1 el valor de la variable "+variableNormal.nombre);
-            variableNormal.valor += -1;
+            if (ctx.ASIGN() !== null){ //Se asignara algun valor a un atributo de clase.
+                var valorDelELemento = this.visit(ctx.expr());
+                variableQueAlmacenaArreglo.valor[valorEntreCorchetes] = valorDelELemento;
+                alert("SE asigno valor al indice de un arreglo"+ valorDelELemento+" en el indice "+valorEntreCorchetes);
+            }
+
+            if(ctx.DOBLEMAS() !== null){
+                alert("Se aumento una unidad el elemento de un arreglo");
+                variableQueAlmacenaArreglo.valor[valorEntreCorchetes] += 1;
+            }
+
+            if(ctx.DOBLEMENOS() !== null){
+                alert("Se decrementa una unidad el elemento del arreglo");
+                variableQueAlmacenaArreglo.valor[valorEntreCorchetes] -= 1;
+            }
+        }
+        else{ //Si no existe un punto ni un corchete quiere decir que se trata de una variable normal.
+            var variableNormal = this.buscarLocalYglobalmente(identDesignator);
+
+            if (ctx.ASIGN() !== null){
+                variableNormal.valor = this.visit(ctx.expr()); //Puede ser un valor primitivo o un objeto tipo clase.
+                alert("Se asignó "+variableNormal.valor+" a la variable "+variableNormal.nombre);
+            }
+
+            if (ctx.PIZQ() !== null){ //Se hara una llamada a funcion.
+                var objetoMetodo = this.buscarGlobal(identDesignator);// se obtiene el objeto metodo de la declaracion.
+
+                //Se setean los parametros que vienen en actPars
+
+                if (ctx.actPars() !== null){//si la llamada a metodo es con parametros.
+
+                }
+
+                this.visitBlockRule(objetoMetodo.blockContext);//Se llama el visit block con el contexto del metodo ya declarado.
+                alert("Termino la ejecucion del método " + objetoMetodo.nombre);
+            }
+
+            if (ctx.DOBLEMAS() !== null){ //Se hará un incremento a la variable.
+                alert("Se incremento en 1 el valor de la variable "+variableNormal.nombre);
+                variableNormal.valor += 1;
+            }
+
+            if (ctx.DOBLEMENOS() !== null){ //Se hara un decremento a una variable.
+                alert("Se decrementó en 1 el valor de la variable "+variableNormal.nombre);
+                variableNormal.valor += -1;
+            }
         }
     }
 
@@ -552,11 +560,11 @@ InterpreteCollector.prototype.visitStatWriteRule = function(ctx) {
 // Visit a parse tree produced by miniCSharpParser#statBlockRule.
 InterpreteCollector.prototype.visitStatBlockRule = function(ctx) {
 
-    ejecuntandoBlockAnidado = true;
+    ejecuntandoBlockAnidado = true; //Se indica que es un bloke pero no pertenece al cuerpo de un metodo.
 
     this.visit(ctx.block());
 
-    ejecuntandoBlockAnidado = false;
+    ejecuntandoBlockAnidado = false; //Se deja la bandera como estaba para que pueda ser utilizada por otros.
 
     return null;
 };
