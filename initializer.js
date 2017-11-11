@@ -1,12 +1,7 @@
 var inter = null;
+var almacenMetodos = []; //Se correra el almacen de métodos creado.
 
 $(document).ready(function(){
-
-    function Metodo(nombre,ctx) {
-        this.nombre = nombre;
-        this.parametros = []; //parametros de la función.
-        this.contexto = ctx; //Se utiliará para ejecutar el cuerpo del metodo haciendo visit a este contexto.
-    }
 
     var editor = ace.edit("myEditor");
     editor.setTheme("ace/theme/monokai");
@@ -62,11 +57,14 @@ $(document).ready(function(){
 
             //ppVisitor.visit(tree);
             //acVisitor.visit(tree);
-            interpreterCollector.resetearAlmacen();//Vasea el almacen de las variables, clases y metodos recolectados.
+            //interpreterCollector.resetearAlmacen();//Vasea el almacen de las variables, clases y metodos recolectados.
             var almacen = interpreterCollector.visit(tree); //Este almacen lo debe utiliar el ejecutador del método.
 
             inter = interpreterCollector;
-            inter.visit
+
+            //interpreterCollector.resetearInterprete();
+
+            alert("Tamaño del almacen: " + almacen.length);
             /*
             var listaErrores = acVisitor.getErrors();
             if (listaErrores.length !== 0){
@@ -83,7 +81,25 @@ $(document).ready(function(){
     });
 
     $("#execute").click(function () {
-        inter.visitExprRule(null);
+        inter.activarEjecucion();
+
+        var metodoAejecutar = "SetPoints";
+        almacenMetodos = inter.obtenerMetodos(); //Se obtienen los metodos recolectados.
+
+        var metodo = null;
+        almacenMetodos.forEach(function (met) {
+            if (met.nombre == metodoAejecutar){
+                metodo = met;
+            }
+        });
+
+        alert(metodo.nombre);
+
+        var cuerpoMetodo = metodo.blockContext;
+        inter.visitBlockRule(cuerpoMetodo);
+
+        //inter.visitExprRule(null);
+
     });
 
 });

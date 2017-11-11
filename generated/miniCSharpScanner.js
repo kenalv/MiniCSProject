@@ -1,4 +1,4 @@
-// Generated from C:/Users/BryanH/WebstormProjects/MiniCSProject\miniCSharpScanner.g4 by ANTLR 4.7
+// Generated from /home/brayan/WebstormProjects/MiniCSProject/miniCSharpScanner.g4 by ANTLR 4.7
 // jshint ignore: start
 var antlr4 = require('antlr4/index');
 

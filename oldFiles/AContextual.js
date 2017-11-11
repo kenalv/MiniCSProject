@@ -1117,14 +1117,14 @@ AContextual.prototype.visitFactDesignatorRule = function(ctxTemp) {
 AContextual.prototype.visitFactNumberRule = function(ctx) {
 
     var contenido = ctx.NUMBER().getSymbol().text;
-    var tipoContenido = null;
+    var tipoDato = null;
     if (contenido.indexOf(".") === -1){
-        tipoContenido = "int";
+        tipoDato = "int";
     }
     else{
-        tipoContenido = "float";
+        tipoDato = "float";
     }
-    return tipoContenido;
+    return tipoDato;
 };
 
 

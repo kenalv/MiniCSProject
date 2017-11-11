@@ -58,7 +58,7 @@ factor		: designator ( PIZQ actPars? PDER )?                                    
 		 |  CHARCONST                                                                                           #factCharConstRule//ya
 		 |  (TRUE | FALSE)                                                                                      #factTrueOrFalseRule//ya
 		 |  NEW IDENTIFIER                                                                                      #factNewRule//ya
-		 | NEW type (CORCHETEIZQ expr CORCHETEDER)?                                                             #factNewArrayRule//ya
+		 | NEW type CORCHETEIZQ expr CORCHETEDER                                                                #factNewArrayRule//ya
 		 |  PIZQ expr PDER                                                                                      #factExpreRule;//ya
 
 designator	: IDENTIFIER ( POINT IDENTIFIER | CORCHETEIZQ expr CORCHETEDER )*                                   #designatorRule;//ya

@@ -181,7 +181,6 @@ MiniCSharpParserVisitor.prototype.visitStatWriteRule = function(ctx) {
 
 // Visit a parse tree produced by miniCSharpParser#statBlockRule.
 MiniCSharpParserVisitor.prototype.visitStatBlockRule = function(ctx) {
-
     //BRACKETIZQ ( statement )* BRACKETDER
     return ctx;
 };

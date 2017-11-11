@@ -203,12 +203,10 @@ MiniCSharpParserVisitor.prototype.visitFactNumberRule = function(ctx) {
   return this.visitChildren(ctx);
 };
 
-
 // Visit a parse tree produced by miniCSharpParser#factCharConstRule.
 MiniCSharpParserVisitor.prototype.visitFactCharConstRule = function(ctx) {
   return this.visitChildren(ctx);
 };
-
 
 // Visit a parse tree produced by miniCSharpParser#factTrueOrFalseRule.
 MiniCSharpParserVisitor.prototype.visitFactTrueOrFalseRule = function(ctx) {
