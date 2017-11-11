@@ -551,7 +551,14 @@ InterpreteCollector.prototype.visitStatWriteRule = function(ctx) {
 
 // Visit a parse tree produced by miniCSharpParser#statBlockRule.
 InterpreteCollector.prototype.visitStatBlockRule = function(ctx) {
-    return this.visitChildren(ctx);
+
+    ejecuntandoBlockAnidado = true;
+
+    this.visit(ctx.block());
+
+    ejecuntandoBlockAnidado = false;
+
+    return null;
 };
 
 
@@ -567,37 +574,43 @@ InterpreteCollector.prototype.visitBlockRule = function(ctx) {
 
     if (ejecutar){
 
-        ***************************
-
-        var objetoMetodoOriginal = this.buscarGlobal(ctx.nombreDeMetodo);
-
-        var copiaVariablesLocales = this.copiarVariables(objetoMetodoOriginal.variablesLocales);
-        var copiaParametros = this.copiarVariables(objetoMetodoOriginal.parametros);
-
-        var copiaObjetoMetodo = new Metodo(objetoMetodoOriginal.nombre,objetoMetodoOriginal.blockContext);
-        copiaObjetoMetodo.parametros = copiaParametros;
-        copiaObjetoMetodo.variablesLocales = copiaVariablesLocales;
-
-
-        copiaObjetoMetodo.almacenLocal = new AlmacenLocal(); //se crea un almacen local para el metodo que corre actualmente.
-        copiaObjetoMetodo.almacenLocal.identifiers.push(copiaObjetoMetodo.parametros);
-        copiaObjetoMetodo.almacenLocal.identifiers.push(copiaObjetoMetodo.variablesLocales);
-
-
-        pilaDeLlamadas.push(copiaObjetoMetodo); //en el tope de la pila de llamadas se encuentra el metodo que esta ejecutando.
-
-        for (var i=0; i < ctx.statement().length; i++)
-        {
-            this.visit(ctx.statement(i));
-
-            //Aqui se debe cortar la lectura de statements en caso de que haya un return dentro del cuerpo del metodo.
-            if (salirPorBreakOReturn){
-                var metodoEjecutandose = pilaDeLlamadas.pop();
-                salirPorBreakOReturn = false;
-                return metodoEjecutandose.almacenLocal.pilaDeExpresiones.pop();
+        if (ejecuntandoBlockAnidado){ //si el block va a pertenecer a un statement tipo IF o FOR O WHILE, etc...
+            for (var x=0; x < ctx.statement().length; x++)
+            {
+                this.visit(ctx.statement(x));
             }
         }
-        pilaDeLlamadas.pop(); //El metodo finalisa y se quita de la pila de llamadas.
+        else{
+            var objetoMetodoOriginal = this.buscarGlobal(ctx.nombreDeMetodo);
+
+            var copiaVariablesLocales = this.copiarVariables(objetoMetodoOriginal.variablesLocales);
+            var copiaParametros = this.copiarVariables(objetoMetodoOriginal.parametros);
+
+            var copiaObjetoMetodo = new Metodo(objetoMetodoOriginal.nombre,objetoMetodoOriginal.blockContext);
+            copiaObjetoMetodo.parametros = copiaParametros;
+            copiaObjetoMetodo.variablesLocales = copiaVariablesLocales;
+
+
+            copiaObjetoMetodo.almacenLocal = new AlmacenLocal(); //se crea un almacen local para el metodo que corre actualmente.
+            copiaObjetoMetodo.almacenLocal.identifiers.push(copiaObjetoMetodo.parametros);
+            copiaObjetoMetodo.almacenLocal.identifiers.push(copiaObjetoMetodo.variablesLocales);
+
+
+            pilaDeLlamadas.push(copiaObjetoMetodo); //en el tope de la pila de llamadas se encuentra el metodo que esta ejecutando.
+
+            for (var i=0; i < ctx.statement().length; i++)
+            {
+                this.visit(ctx.statement(i));
+
+                //Aqui se debe cortar la lectura de statements en caso de que haya un return dentro del cuerpo del metodo.
+                if (salirPorBreakOReturn){
+                    var metodoEjecutandose = pilaDeLlamadas.pop();
+                    salirPorBreakOReturn = false;
+                    return metodoEjecutandose.almacenLocal.pilaDeExpresiones.pop();
+                }
+            }
+            pilaDeLlamadas.pop(); //El metodo finalisa y se quita de la pila de llamadas.
+        }
         //return null;
     }
     else{
