@@ -18,8 +18,10 @@ var operadores2 = {
     ">":function (x,y) {return (x > y);},
     ">=":function (x,y) {return (x >= y);},
     "<":function (x,y) {return (x < y);},
-    "<=":function (x,y) {return (x <= y)}
-}
+    "<=":function (x,y) {return (x <= y)},
+    "&&":function (x,y) {return (x && y)},
+    "||":function (x,y) {return (x || y)}
+};
 
 //Constructor para el objeto AlmacenLocal
 function AlmacenLocal() { //representa el almacen local de una función.
@@ -509,12 +511,23 @@ InterpreteCollector.prototype.visitStatDesignatorRule = function(ctx) {
 // Visit a parse tree produced by miniCSharpParser#statIfRule.
 InterpreteCollector.prototype.visitStatIfRule = function(ctx) {
     //IF PIZQ condition PDER statement ( ELSE statement )?
+
     ejecuntandoBlockAnidado = false;
 
-    //condition	: condTerm ( OR condTerm )*
-    var conditionContext = this.visit(ctx.condition());
+
+
+    var conditionResult = this.visit(ctx.condition()); //atrapa si es true o false
 
     var ParentesisDespuesDelIf = conditionContext.PIZQ().length;
+    var ElseDespuesStatement = ctx.ELSE().length;
+
+    if(ParentesisDespuesDelIf > 0){
+        var statementBlock = this.visit(ctx.statement(0));
+    }
+
+    if(ElseDespuesStatement > 0){
+        var statementBlock2 = this.visit(ctx.statement(1));
+    }
 
 
     return this.visitChildren(ctx);
@@ -587,6 +600,13 @@ InterpreteCollector.prototype.visitStatReadRule = function(ctx) {
 
 // Visit a parse tree produced by miniCSharpParser#statWriteRule.
 InterpreteCollector.prototype.visitStatWriteRule = function(ctx) {
+    // WRITE PIZQ expr (COMA NUMBER)? PDER PyCOMA
+
+
+        var expr1 = this.visit(ctx.expr());
+        componente.value += expr1;
+
+
     return this.visitChildren(ctx);
 };
 
@@ -687,8 +707,27 @@ InterpreteCollector.prototype.visitActParsRule = function(ctx) {
 
 // Visit a parse tree produced by miniCSharpParser#conditionnRule.
 InterpreteCollector.prototype.visitConditionnRule = function(ctx) {
-    return this.visitChildren(ctx);
+//condTerm ( OR condTerm )*
+    var condT1 = this.visit(ctx.condTerm(0)); //obtengo primer Variable 'TRUE' o 'FALSE'
+    var signoOR = ctx.OR().getSymbol();
+
+    for(var i = 1; i <= ctx.condTerm().length - 1; i++){
+
+        var condT2 = this.visit(ctx.condTerm(i));
+
+        if(operadores2[signoOR](condT1,condT2)){
+            i++;//aumenta contador para asignar siguiente
+            if(i < ctx.condTerm().length){
+                condT1 = this.visit(ctx.condTerm(i)); //intercambia el primer confFact al que sigue para seguir evaluando.
+            }
+
+        }
+
+    }
+    return condT1;
+
 };
+
 
 
 // Visit a parse tree produced by miniCSharpParser#condTermRule.
@@ -696,17 +735,25 @@ InterpreteCollector.prototype.visitCondTermRule = function(ctx) {
 
 
    // condFact ( AND condFact )*
-        var condF1 = this.visit(ctx.condFact(0));
+        var condF1 = this.visit(ctx.condFact(0)); //obtengo primer Variable 'TRUE' o 'FALSE'
+        var signoAND = ctx.AND().getSymbol();
 
-        for(var i = 0; i < ctx.condFact().length() - 1; i++){
+        for(var i = 1; i <= ctx.condFact().length - 1; i++){
 
-            if(ctx.AND().getSymbol() === '&&'){
-                var condF2 = this.visit(ctx.condFact(i));
+            var condF2 = this.visit(ctx.condFact(i));
+
+            if(operadores2[signoAND](condF1,condF2)){
+                i++;//aumenta contador para asignar siguiente
+                if(i < ctx.condFact().length){
+                    condF1 = this.visit(ctx.condFact(i)); //intercambia el primer confFact al que sigue para seguir evaluando.
+                }
+
             }
+
         }
 
 
-    return this.visitChildrn(ctx);
+        return condF1; // retorna el ultimo elemento obtenido de condFact, de esta forma se verifica que todos sean TRUE;
 };
 
 
