@@ -413,6 +413,7 @@ InterpreteCollector.prototype.visitStatDesignatorRule = function(ctx) {
     Porque seguramente este statement pertenece a un for o while y su contexto(ctx) se utiliza para saber si es DOBLEMAS Ó
     DOBLEMENOS para saber si se incrementa o decrementa el ciclo o for que se ejecutará.
      */
+
     if (ejecuntandoBlockAnidado){
         return ctx;
     }
@@ -479,9 +480,10 @@ InterpreteCollector.prototype.visitStatDesignatorRule = function(ctx) {
                 var objetoMetodo = this.buscarGlobal(identDesignator);// se obtiene el objeto metodo de la declaracion.
 
                 //Se setean los parametros que vienen en actPars
+                objetoMetodo.blockContext["parametrosActuales"] = [];
 
                 if (ctx.actPars() !== null){//si la llamada a metodo es con parametros.
-
+                    objetoMetodo.blockContext.parametrosActuales = this.visit(ctx.actPars());
                 }
 
                 this.visitBlockRule(objetoMetodo.blockContext);//Se llama el visit block con el contexto del metodo ya declarado.
@@ -513,8 +515,6 @@ InterpreteCollector.prototype.visitStatIfRule = function(ctx) {
     var conditionContext = this.visit(ctx.condition());
 
     var ParentesisDespuesDelIf = conditionContext.PIZQ().length;
-
-
 
 
     return this.visitChildren(ctx);
@@ -631,6 +631,14 @@ InterpreteCollector.prototype.visitBlockRule = function(ctx) {
             var copiaObjetoMetodo = new Metodo(objetoMetodoOriginal.nombre,objetoMetodoOriginal.blockContext);
             copiaObjetoMetodo.parametros = copiaParametros;
             copiaObjetoMetodo.variablesLocales = copiaVariablesLocales;
+
+            var cont = 0;
+            if (ctx.parametrosActuales.length > 0){
+                copiaObjetoMetodo.parametros.forEach(function (parametro) {
+                    parametro.valor = ctx.parametrosActuales[cont];
+                    cont++;
+                });
+            }
 
 
             copiaObjetoMetodo.almacenLocal = new AlmacenLocal(); //se crea un almacen local para el metodo que corre actualmente.
@@ -808,8 +816,77 @@ InterpreteCollector.prototype.visitTermRule = function(ctx) {
 
 // Visit a parse tree produced by miniCSharpParser#factDesignatorRule.
 InterpreteCollector.prototype.visitFactDesignatorRule = function(ctx) {
-    alert("falta el valor de retorno despues del asign");
-    return null;
+
+    var designatorContext = this.visit(ctx.designator());
+    //IDENTIFIER ( POINT IDENTIFIER | CORCHETEIZQ expr CORCHETEDER )*
+
+    var identDesignator = designatorContext.IDENTIFIER(0);
+
+    var puntosDespuesDelPrimerIdentificador = designatorContext.POINT().length;
+    var corchetesDespuesDelPrimerIdentificador = designatorContext.CORCHETEIZQ().length;
+
+    if(puntosDespuesDelPrimerIdentificador > 0) {
+
+        var variableConClase = this.buscarLocalYglobalmente(identDesignator);
+        var nombreAtributo = designatorContext.IDENTIFIER(1);
+        var objetoVariable = variableConClase.valor.buscarAtributos(nombreAtributo);
+
+        if (ctx.ASIGN() !== null){ //Se asignara algun valor a un atributo de clase.
+            var valorAasignar = this.visit(ctx.expr());
+            alert("Se asignó a un atributo de clase el valor"+ valorAasignar);
+            objetoVariable.valor = valorAasignar;
+            alert(objetoVariable.valor);
+        }
+
+        if(ctx.DOBLEMAS() !== null){
+            alert("Se aumento una unidad el atributo de la clase");
+            objetoVariable.valor += 1;
+        }
+
+        if(ctx.DOBLEMENOS() !== null){
+            alert("Se decremento una unidad el atributo de la clase");
+            objetoVariable.valor += -1;
+        }
+    }else if(corchetesDespuesDelPrimerIdentificador > 0){ //si es una asignacion a un arreglo.
+        var variableQueAlmacenaArreglo = this.buscarLocalYglobalmente(identDesignator);
+        var valorEntreCorchetes = this.visit(designatorContext.expr()); //indice del elemento del arreglo al que se le va a realizar alguna operacion.
+
+        if (ctx.ASIGN() !== null){ //Se asignara algun valor a un atributo de clase.
+            var valorDelELemento = this.visit(ctx.expr());
+            variableQueAlmacenaArreglo.valor[valorEntreCorchetes] = valorDelELemento;
+            alert("SE asigno valor al indice de un arreglo"+ valorDelELemento+" en el indice "+valorEntreCorchetes);
+        }
+
+        if(ctx.DOBLEMAS() !== null){
+            alert("Se aumento una unidad el elemento de un arreglo");
+            variableQueAlmacenaArreglo.valor[valorEntreCorchetes] += 1;
+        }
+
+        if(ctx.DOBLEMENOS() !== null){
+            alert("Se decrementa una unidad el elemento del arreglo");
+            variableQueAlmacenaArreglo.valor[valorEntreCorchetes] -= 1;
+        }
+    }
+    else{ //Si no existe un punto ni un corchete quiere decir que se trata de una variable normal.
+        var variableNormalOMetodo = this.buscarLocalYglobalmente(identDesignator);
+
+        if (ctx.PIZQ() !== null){ //Si es una llamada a metodo.
+            //se obtienen los parametros que llevara la llamada.
+            var parametros = [];
+            if (ctx.actPars() !== null){
+                parametros = this.visit(ctx.actPars());
+            }
+
+            //Se hace la llamada al metodo con los parametros
+            variableNormalOMetodo.blockContext["parametrosActuales"] = parametros;
+
+            var valorDevueltoPorMetodo = this.visitBlockRule(variableNormalOMetodo.blockContext);
+            alert("El metodo retornó el valor "+ valorDevueltoPorMetodo);
+            return valorDevueltoPorMetodo;
+        }else{
+            return variableNormalOMetodo.valor;
+        }
+    }
 };
 
 // Visit a parse tree produced by miniCSharpParser#factNumberRule.

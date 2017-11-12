@@ -96,6 +96,8 @@ $(document).ready(function(){
         alert(metodo.nombre);
 
         var cuerpoMetodo = metodo.blockContext;
+        cuerpoMetodo["parametrosActuales"] = []; //lista de los valores de los parametros a enviar.
+
         inter.visitBlockRule(cuerpoMetodo);
 
         //inter.visitExprRule(null);

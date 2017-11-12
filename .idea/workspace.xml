@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="04cf0e5a-deee-414d-9aa8-0d2f10b15b3c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/initializer.js" afterPath="$PROJECT_DIR$/initializer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interprete/InterpreteCollector.js" afterPath="$PROJECT_DIR$/interprete/InterpreteCollector.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -15,26 +16,27 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="MiniC#Project" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="InterpreteCollector.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/interprete/InterpreteCollector.js">
+      <file leaf-file-name="miniCSharpParser.g4" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/miniCSharpParser.g4">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="74" column="32" lean-forward="true" selection-start-line="74" selection-start-column="32" selection-end-line="74" selection-end-column="32" />
+            <state relative-caret-position="219">
+              <caret line="55" column="131" lean-forward="false" selection-start-line="55" selection-start-column="113" selection-end-line="55" selection-end-column="131" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="miniCSharpParser.g4" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/miniCSharpParser.g4">
+      <file leaf-file-name="InterpreteCollector.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/interprete/InterpreteCollector.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="608">
-              <caret line="47" column="50" lean-forward="true" selection-start-line="47" selection-start-column="50" selection-end-line="47" selection-end-column="50" />
+            <state relative-caret-position="274">
+              <caret line="884" column="42" lean-forward="false" selection-start-line="884" selection-start-column="42" selection-end-line="884" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -51,7 +53,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>visitdesignatorRule</find>
       <find>visitExp</find>
       <find>designatorRule</find>
       <find>block</find>
@@ -77,10 +78,11 @@
       <find>alert</find>
       <find>visitconstDeclaRule</find>
       <find>visitstatReturnRule</find>
-      <find>visitactParsRule</find>
       <find>visitstatBlockRule</find>
+      <find>visitactParsRule</find>
       <find>visitblockRule</find>
       <find>visitstatDesignatorRule</find>
+      <find>visitfactDesignatorRule</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -111,8 +113,8 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/oldFiles/AContextual.js" />
         <option value="$PROJECT_DIR$/parserVisitor/MiniCSharpParserVisitor.js" />
-        <option value="$PROJECT_DIR$/miniCSharpParser.g4" />
         <option value="$PROJECT_DIR$/initializer.js" />
+        <option value="$PROJECT_DIR$/miniCSharpParser.g4" />
         <option value="$PROJECT_DIR$/interprete/InterpreteCollector.js" />
       </list>
     </option>
@@ -123,9 +125,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="width" value="1280" />
-    <option name="height" value="782" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1376" />
+    <option name="height" value="784" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -142,19 +146,36 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
-          <expand>
-            <path>
-              <item name="MiniCSProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MiniCSProject" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MiniCSProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MiniCSProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MiniCSProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MiniCSProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="interprete" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -178,6 +199,7 @@
     <property name="$PROJECT_DIR$/miniCSharpParser.g4::/gen-visitor" value="true" />
     <property name="settings.editor.splitter.proportion" value="0.23212537" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/generated/InterpreterExecutor.js" />
+    <property name="full.screen.before.presentation.mode" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -206,16 +228,20 @@
     </option>
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.html (1)">
-    <configuration name="AContextual.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="$PROJECT_DIR$/oldFiles/AContextual.js" working-dir="$PROJECT_DIR$/generated" />
-    <configuration name="InterpreteCollector.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="InterpreteCollector.js" working-dir="$PROJECT_DIR$/interprete" />
-    <configuration name="PrettyPrint.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="$PROJECT_DIR$/oldFiles/PrettyPrint.js" working-dir="$PROJECT_DIR$/generated" />
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
+    <configuration default="false" name="PrettyPrint.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="$PROJECT_DIR$/oldFiles/PrettyPrint.js" working-dir="$PROJECT_DIR$/generated">
+      <method />
+    </configuration>
+    <configuration default="false" name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/MiniC#Project/index.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="index.html (1)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/MiniCSProject/index.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="AContextual.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="$PROJECT_DIR$/oldFiles/AContextual.js" working-dir="$PROJECT_DIR$/generated">
+      <method />
+    </configuration>
+    <configuration default="false" name="InterpreteCollector.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="InterpreteCollector.js" working-dir="$PROJECT_DIR$/interprete">
+      <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <method />
@@ -254,6 +280,15 @@
       <option name="filePath" />
       <method />
     </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
       <command value="run" />
       <scripts />
@@ -274,8 +309,6 @@
       <recursive>false</recursive>
       <method />
     </configuration>
-    <configuration name="index.html (1)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/MiniCSProject/index.html" />
-    <configuration name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/MiniC#Project/index.html" />
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Node.js.PrettyPrint.js" />
       <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
@@ -388,7 +421,9 @@
       <workItem from="1510299278588" duration="12475000" />
       <workItem from="1510345476300" duration="12918000" />
       <workItem from="1510371703069" duration="9081000" />
-      <workItem from="1510385823497" duration="6487000" />
+      <workItem from="1510385823497" duration="6694000" />
+      <workItem from="1510415658333" duration="3795000" />
+      <workItem from="1510497360514" duration="5204000" />
     </task>
     <task id="LOCAL-00001" summary="asdasd">
       <created>1509600572035</created>
@@ -418,11 +453,25 @@
       <option name="project" value="LOCAL" />
       <updated>1510387918786</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Se creo una lista &quot;pila de llamadas&quot; que guarda objetos de tipo Metodo, el metodo que esta en el tope de la pila es el que se esta ejecutando. Ademas elimine los metodos de busqueda, 3 metodos de busqueda borrados, solo quedó el de busqueda global.">
+      <created>1510392924623</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1510392924623</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Se creo una lista &quot;pila de llamadas&quot; que guarda objetos de tipo Metodo, el metodo que esta en el tope de la pila es el que se esta ejecutando. Ademas elimine los metodos de busqueda, 3 metodos de busqueda borrados, solo quedó el de busqueda global..">
+      <created>1510393071964</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1510393071964</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="614800000" />
+    <option name="totallyTimeSpent" value="624006000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -434,20 +483,20 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="782" extended-state="6" />
+    <frame x="-8" y="-8" width="1376" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22890624" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22869955" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286385" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.50298953" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32740742" sideWeight="0.49701047" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32457495" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.49701047" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962519" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32718894" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25037038" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25037038" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -465,7 +514,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.50298953" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32457495" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.49701047" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32740742" sideWeight="0.49701047" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32718894" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22890624" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -473,12 +522,12 @@
       <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962519" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25037038" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25037038" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="processedProjectFiles" value="true" />
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.tokens" />
@@ -490,7 +539,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="asdasd" />
     <MESSAGE value="Se creo una lista &quot;pila de llamadas&quot; que guarda objetos de tipo Metodo, el metodo que esta en el tope de la pila es el que se esta ejecutando. Ademas elimine los metodos de busqueda, 3 metodos de busqueda borrados, solo quedó el de busqueda global." />
-    <option name="LAST_COMMIT_MESSAGE" value="Se creo una lista &quot;pila de llamadas&quot; que guarda objetos de tipo Metodo, el metodo que esta en el tope de la pila es el que se esta ejecutando. Ademas elimine los metodos de busqueda, 3 metodos de busqueda borrados, solo quedó el de busqueda global." />
+    <MESSAGE value="Se creo una lista &quot;pila de llamadas&quot; que guarda objetos de tipo Metodo, el metodo que esta en el tope de la pila es el que se esta ejecutando. Ademas elimine los metodos de busqueda, 3 metodos de busqueda borrados, solo quedó el de busqueda global.." />
+    <option name="LAST_COMMIT_MESSAGE" value="Se creo una lista &quot;pila de llamadas&quot; que guarda objetos de tipo Metodo, el metodo que esta en el tope de la pila es el que se esta ejecutando. Ademas elimine los metodos de busqueda, 3 metodos de busqueda borrados, solo quedó el de busqueda global.." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -758,7 +808,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="667">
           <caret line="536" column="28" lean-forward="false" selection-start-line="536" selection-start-column="27" selection-end-line="536" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -772,31 +821,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/initializer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="667">
-          <caret line="98" column="43" lean-forward="false" selection-start-line="98" selection-start-column="43" selection-end-line="98" selection-end-column="43" />
+        <state relative-caret-position="243">
+          <caret line="100" column="43" lean-forward="true" selection-start-line="100" selection-start-column="43" selection-end-line="100" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/miniCSharpScanner.g4">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="15" lean-forward="false" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="15" />
+        <state relative-caret-position="171">
+          <caret line="57" column="14" lean-forward="false" selection-start-line="57" selection-start-column="11" selection-end-line="57" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/miniCSharpParser.g4">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="47" column="50" lean-forward="true" selection-start-line="47" selection-start-column="50" selection-end-line="47" selection-end-column="50" />
+        <state relative-caret-position="219">
+          <caret line="55" column="131" lean-forward="false" selection-start-line="55" selection-start-column="113" selection-end-line="55" selection-end-column="131" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/interprete/InterpreteCollector.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="74" column="32" lean-forward="true" selection-start-line="74" selection-start-column="32" selection-end-line="74" selection-end-column="32" />
+        <state relative-caret-position="274">
+          <caret line="884" column="42" lean-forward="false" selection-start-line="884" selection-start-column="42" selection-end-line="884" selection-end-column="42" />
           <folding />
         </state>
       </provider>
