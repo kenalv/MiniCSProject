@@ -817,6 +817,8 @@ InterpreteCollector.prototype.visitTermRule = function(ctx) {
 // Visit a parse tree produced by miniCSharpParser#factDesignatorRule.
 InterpreteCollector.prototype.visitFactDesignatorRule = function(ctx) {
 
+    //designator ( PIZQ actPars? PDER )?
+
     var designatorContext = this.visit(ctx.designator());
     //IDENTIFIER ( POINT IDENTIFIER | CORCHETEIZQ expr CORCHETEDER )*
 
@@ -831,41 +833,13 @@ InterpreteCollector.prototype.visitFactDesignatorRule = function(ctx) {
         var nombreAtributo = designatorContext.IDENTIFIER(1);
         var objetoVariable = variableConClase.valor.buscarAtributos(nombreAtributo);
 
-        if (ctx.ASIGN() !== null){ //Se asignara algun valor a un atributo de clase.
-            var valorAasignar = this.visit(ctx.expr());
-            alert("Se asignó a un atributo de clase el valor"+ valorAasignar);
-            objetoVariable.valor = valorAasignar;
-            alert(objetoVariable.valor);
-        }
+        return objetoVariable.valor;
 
-        if(ctx.DOBLEMAS() !== null){
-            alert("Se aumento una unidad el atributo de la clase");
-            objetoVariable.valor += 1;
-        }
-
-        if(ctx.DOBLEMENOS() !== null){
-            alert("Se decremento una unidad el atributo de la clase");
-            objetoVariable.valor += -1;
-        }
-    }else if(corchetesDespuesDelPrimerIdentificador > 0){ //si es una asignacion a un arreglo.
+    }else if(corchetesDespuesDelPrimerIdentificador > 0){ //si se quiere obtener el elemento de un arreglo.
         var variableQueAlmacenaArreglo = this.buscarLocalYglobalmente(identDesignator);
         var valorEntreCorchetes = this.visit(designatorContext.expr()); //indice del elemento del arreglo al que se le va a realizar alguna operacion.
 
-        if (ctx.ASIGN() !== null){ //Se asignara algun valor a un atributo de clase.
-            var valorDelELemento = this.visit(ctx.expr());
-            variableQueAlmacenaArreglo.valor[valorEntreCorchetes] = valorDelELemento;
-            alert("SE asigno valor al indice de un arreglo"+ valorDelELemento+" en el indice "+valorEntreCorchetes);
-        }
-
-        if(ctx.DOBLEMAS() !== null){
-            alert("Se aumento una unidad el elemento de un arreglo");
-            variableQueAlmacenaArreglo.valor[valorEntreCorchetes] += 1;
-        }
-
-        if(ctx.DOBLEMENOS() !== null){
-            alert("Se decrementa una unidad el elemento del arreglo");
-            variableQueAlmacenaArreglo.valor[valorEntreCorchetes] -= 1;
-        }
+        return variableQueAlmacenaArreglo.valor[valorEntreCorchetes];
     }
     else{ //Si no existe un punto ni un corchete quiere decir que se trata de una variable normal.
         var variableNormalOMetodo = this.buscarLocalYglobalmente(identDesignator);
