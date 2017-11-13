@@ -93,10 +93,10 @@ $(document).ready(function(){
             }
         });
 
-        alert(metodo.nombre);
+        //alert(metodo.nombre);
 
         var cuerpoMetodo = metodo.blockContext;
-        cuerpoMetodo["parametrosActuales"] = [2]; //lista de los valores de los parametros a enviar.
+        cuerpoMetodo["parametrosActuales"] = [3]; //lista de los valores de los parametros a enviar.
 
         inter.visitBlockRule(cuerpoMetodo);
 
