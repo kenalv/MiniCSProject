@@ -1,5 +1,5 @@
 /**
- * Created by BryanH and Keneth on 31/10/2017.
+ * Created by BryanH and Kenneth on 31/10/2017.
  **/
 
 var collectorVisitor = require('../generated/miniCSharpParserVisitor').miniCSharpParserVisitor;
@@ -520,7 +520,7 @@ InterpreteCollector.prototype.visitStatIfRule = function(ctx) {
 
     var conditionResult = this.visit(ctx.condition()); //atrapa si es true o false
 
-    var ParentesisDespuesDelIf = conditionContext.PIZQ().length;
+    var ParentesisDespuesDelIf = ctx.PIZQ().length;
     var ElseDespuesStatement = ctx.ELSE().length;
 
     if(ParentesisDespuesDelIf > 0){
