@@ -160,7 +160,7 @@ InterpreteCollector.prototype.copiarVariables = function (arregloAcopiar) {
 // Visit a parse tree produced by miniCSharpParser#programN.
 InterpreteCollector.prototype.visitProgramN = function(ctx) {
 
-    //console.log("Resultado: " + (true && true));
+    console.log("Resultado: " + (false || true));
 
 
     for (var i = 0; i < ctx.constDecl().length; i++)
@@ -517,7 +517,7 @@ InterpreteCollector.prototype.visitStatIfRule = function(ctx) {
     ejecuntandoBlockAnidado = false;
 
     var conditionResult = this.visit(ctx.condition()); //atrapa si es true o false
-
+    alert('RETORNO CONDITION "IF": '+conditionResult);
     if (conditionResult){
         this.visit(ctx.statement(0));
     }
@@ -705,15 +705,21 @@ InterpreteCollector.prototype.visitConditionnRule = function(ctx) {
 //condTerm ( OR condTerm )*
 
     var condT1 = this.visit(ctx.condTerm(0)); //obtengo primer Variable 'TRUE' o 'FALSE'
+    var listaOR = ctx.OR();
+    var result = condT1;
 
-    var result = null;
-    for(var i = 1; i <= ctx.condTerm().length - 1; i++){
-        var signoOR = ctx.OR(i-1).getSymbol().text;
-        var condT2 = this.visit(ctx.condTerm(i));
-        result = operadores2[signoOR](condT1,condT2);
+        for(var i = 0; i < listaOR.length; i++){
 
-        condT1 = result;
-    }
+            var signoOR = ctx.OR(i).getSymbol().text;
+
+            var condT2 = this.visit(ctx.condTerm(i+1));
+
+            result = operadores2[signoOR](condT1,condT2);
+
+            condT1 = result;
+        }
+
+
     return result;
 
 };
@@ -726,22 +732,20 @@ InterpreteCollector.prototype.visitCondTermRule = function(ctx) {
 
    // condFact ( AND condFact )*
         var condF1 = this.visit(ctx.condFact(0)); //obtengo primer Variable 'TRUE' o 'FALSE'
+        var listaAND = ctx.AND();
 
+        var result = condF1;
 
-        var result = null;
-
-
-        for(var i = 1; i <= ctx.condFact().length - 1; i++){
+        for(var i = 0; i < listaAND.length; i++){
             var signoAND = ctx.AND(i).getSymbol().text;
 
-            var condF2 = this.visit(ctx.condFact(i));
+            var condF2 = this.visit(ctx.condFact(i+1));
 
-            result = operadores2[signoAND](condF1,condF2);
+            result = operadores2[signoAND](condF1, condF2);
 
+            condF1 = result;
 
-            condF1 =result;
         }
-
 
         return result; // retorna el ultimo elemento obtenido de condFact, de esta forma se verifica que todos sean TRUE;
 };
@@ -759,7 +763,7 @@ InterpreteCollector.prototype.visitCondFactRule = function(ctx) {
     if(ejecuntandoBlockAnidado){
         return ctx;
     }else {
-        return operadores2[signo](expr1, expr2);
+        return operadores2[signo](expr1,expr2);
     }
 };
 
