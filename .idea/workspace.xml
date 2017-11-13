@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="04cf0e5a-deee-414d-9aa8-0d2f10b15b3c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/initializer.js" afterPath="$PROJECT_DIR$/initializer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interprete/InterpreteCollector.js" afterPath="$PROJECT_DIR$/interprete/InterpreteCollector.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,17 +20,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="InterpreteCollector.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="InterpreteCollector.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/interprete/InterpreteCollector.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="764" column="11" lean-forward="true" selection-start-line="764" selection-start-column="11" selection-end-line="764" selection-end-column="11" />
+            <state relative-caret-position="326">
+              <caret line="106" column="0" lean-forward="true" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="initializer.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="initializer.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/initializer.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="362">
@@ -113,7 +113,6 @@
       <find>visitvarDeclaRule</find>
       <find>visitBlockRule</find>
       <find>visitexprRule</find>
-      <find>alert</find>
       <find>visitconstDeclaRule</find>
       <find>visitstatReturnRule</find>
       <find>visitactParsRule</find>
@@ -131,6 +130,7 @@
       <find>visitcondf</find>
       <find>visitstatif</find>
       <find>visitcon</find>
+      <find>alert</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -162,8 +162,8 @@
         <option value="$PROJECT_DIR$/oldFiles/AContextual.js" />
         <option value="$PROJECT_DIR$/parserVisitor/MiniCSharpParserVisitor.js" />
         <option value="$PROJECT_DIR$/miniCSharpParser.g4" />
-        <option value="$PROJECT_DIR$/interprete/InterpreteCollector.js" />
         <option value="$PROJECT_DIR$/initializer.js" />
+        <option value="$PROJECT_DIR$/interprete/InterpreteCollector.js" />
       </list>
     </option>
   </component>
@@ -674,11 +674,18 @@
       <option name="project" value="LOCAL" />
       <updated>1510544205834</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="IF SIRVE!">
+      <created>1510545606237</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1510545606237</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="631987000" />
+    <option name="totallyTimeSpent" value="632086000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1060,18 +1067,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/interprete/InterpreteCollector.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="764" column="11" lean-forward="true" selection-start-line="764" selection-start-column="11" selection-end-line="764" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/initializer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="362">
           <caret line="95" column="10" lean-forward="false" selection-start-line="95" selection-start-column="10" selection-end-line="95" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interprete/InterpreteCollector.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="106" column="0" lean-forward="true" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
           <folding />
         </state>
       </provider>

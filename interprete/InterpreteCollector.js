@@ -96,11 +96,11 @@ InterpreteCollector.prototype.constructor = InterpreteCollector;
 InterpreteCollector.prototype.buscarLocal = function (nombre) {
     var metodoActual = pilaDeLlamadas[pilaDeLlamadas.length-1]; //Se obtiene el metodo en el tope de la pila.
 
-    alert("Se esta buscando el metodo " + nombre);
+    //alert("Se esta buscando el metodo " + nombre);
 
     var variableLocal = metodoActual.almacenLocal.buscar(nombre);
 
-    alert(variableLocal instanceof Array);
+   // alert(variableLocal instanceof Array);
 
     return variableLocal;
 };
@@ -438,18 +438,18 @@ InterpreteCollector.prototype.visitStatDesignatorRule = function(ctx) {
 
             if (ctx.ASIGN() !== null){ //Se asignara algun valor a un atributo de clase.
                 var valorAasignar = this.visit(ctx.expr());
-                alert("Se asignó a un atributo de clase el valor"+ valorAasignar);
+                //alert("Se asignó a un atributo de clase el valor"+ valorAasignar);
                 objetoVariable.valor = valorAasignar;
-                alert(objetoVariable.valor);
+                //alert(objetoVariable.valor);
             }
 
             if(ctx.DOBLEMAS() !== null){
-                alert("Se aumento una unidad el atributo de la clase");
+                //alert("Se aumento una unidad el atributo de la clase");
                 objetoVariable.valor += 1;
             }
 
             if(ctx.DOBLEMENOS() !== null){
-                alert("Se decremento una unidad el atributo de la clase");
+                //alert("Se decremento una unidad el atributo de la clase");
                 objetoVariable.valor += -1;
             }
         }else if(corchetesDespuesDelPrimerIdentificador > 0){ //si es una asignacion a un arreglo.
@@ -459,16 +459,16 @@ InterpreteCollector.prototype.visitStatDesignatorRule = function(ctx) {
             if (ctx.ASIGN() !== null){ //Se asignara algun valor a un atributo de clase.
                 var valorDelELemento = this.visit(ctx.expr());
                 variableQueAlmacenaArreglo.valor[valorEntreCorchetes] = valorDelELemento;
-                alert("SE asigno valor al indice de un arreglo"+ valorDelELemento+" en el indice "+valorEntreCorchetes);
+                //alert("SE asigno valor al indice de un arreglo"+ valorDelELemento+" en el indice "+valorEntreCorchetes);
             }
 
             if(ctx.DOBLEMAS() !== null){
-                alert("Se aumento una unidad el elemento de un arreglo");
+                //alert("Se aumento una unidad el elemento de un arreglo");
                 variableQueAlmacenaArreglo.valor[valorEntreCorchetes] += 1;
             }
 
             if(ctx.DOBLEMENOS() !== null){
-                alert("Se decrementa una unidad el elemento del arreglo");
+                //alert("Se decrementa una unidad el elemento del arreglo");
                 variableQueAlmacenaArreglo.valor[valorEntreCorchetes] -= 1;
             }
         }
@@ -477,7 +477,7 @@ InterpreteCollector.prototype.visitStatDesignatorRule = function(ctx) {
 
             if (ctx.ASIGN() !== null){
                 variableNormal.valor = this.visit(ctx.expr()); //Puede ser un valor primitivo o un objeto tipo clase.
-                alert("Se asignó "+variableNormal.valor+" a la variable "+variableNormal.nombre);
+                //alert("Se asignó "+variableNormal.valor+" a la variable "+variableNormal.nombre);
             }
 
             if (ctx.PIZQ() !== null){ //Se hara una llamada a funcion.
@@ -491,16 +491,16 @@ InterpreteCollector.prototype.visitStatDesignatorRule = function(ctx) {
                 }
 
                 this.visitBlockRule(objetoMetodo.blockContext);//Se llama el visit block con el contexto del metodo ya declarado.
-                alert("Termino la ejecucion del método " + objetoMetodo.nombre);
+                //alert("Termino la ejecucion del método " + objetoMetodo.nombre);
             }
 
             if (ctx.DOBLEMAS() !== null){ //Se hará un incremento a la variable.
-                alert("Se incremento en 1 el valor de la variable "+variableNormal.nombre);
+                //alert("Se incremento en 1 el valor de la variable "+variableNormal.nombre);
                 variableNormal.valor += 1;
             }
 
             if (ctx.DOBLEMENOS() !== null){ //Se hara un decremento a una variable.
-                alert("Se decrementó en 1 el valor de la variable "+variableNormal.nombre);
+                //alert("Se decrementó en 1 el valor de la variable "+variableNormal.nombre);
                 variableNormal.valor += -1;
             }
         }
@@ -517,7 +517,7 @@ InterpreteCollector.prototype.visitStatIfRule = function(ctx) {
     ejecuntandoBlockAnidado = false;
 
     var conditionResult = this.visit(ctx.condition()); //atrapa si es true o false
-    alert('RETORNO CONDITION "IF": '+conditionResult);
+    //alert('RETORNO CONDITION "IF": '+conditionResult);
     if (conditionResult){
         this.visit(ctx.statement(0));
     }
@@ -879,7 +879,7 @@ InterpreteCollector.prototype.visitFactDesignatorRule = function(ctx) {
             variableNormalOMetodo.blockContext["parametrosActuales"] = parametros;
 
             var valorDevueltoPorMetodo = this.visitBlockRule(variableNormalOMetodo.blockContext);
-            alert("El metodo retornó el valor "+ valorDevueltoPorMetodo);
+           // alert("El metodo retornó el valor "+ valorDevueltoPorMetodo);
             return valorDevueltoPorMetodo;
         }else{
             return variableNormalOMetodo.valor;
