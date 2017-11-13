@@ -1,5 +1,5 @@
 /**
- * Created by BryanH on 31/10/2017.
+ * Created by BryanH and Keneth on 31/10/2017.
  **/
 
 var collectorVisitor = require('../generated/miniCSharpParserVisitor').miniCSharpParserVisitor;
