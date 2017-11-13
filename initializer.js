@@ -47,7 +47,7 @@ $(document).ready(function(){
             //var ppVisitor = new PPVisitor.PrettyPrint(infoBox);
             //var acVisitor = new ACVisitor.AContextual();
             //var interpreter = new Interpreter.miniCSharpParserVisitor(infoBox);
-            var interpreterCollector = new InterpreterCollector.InterpreterCollector();
+            var interpreterCollector = new InterpreterCollector.InterpreterCollector(infoBox);
 
             parser.buildParseTrees = true; //se le indica al parser que cree arboles.
 
@@ -96,7 +96,7 @@ $(document).ready(function(){
         alert(metodo.nombre);
 
         var cuerpoMetodo = metodo.blockContext;
-        cuerpoMetodo["parametrosActuales"] = []; //lista de los valores de los parametros a enviar.
+        cuerpoMetodo["parametrosActuales"] = [2]; //lista de los valores de los parametros a enviar.
 
         inter.visitBlockRule(cuerpoMetodo);
 

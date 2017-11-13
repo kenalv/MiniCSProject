@@ -40,6 +40,7 @@ function AlmacenLocal() { //representa el almacen local de una función.
     };
 }
 
+var consola = null; //se almacenará el componente html donde se imprimiran resultados.
 var almacenGlobal = [];
 var ejecutar = false;
 var pilaDeLlamadas = [];//Esta pila cargara objetos de tipo Método(El metodo que este en el tope de la pila es el que esta ejecutando, cada metodo tiene su propio almacen local).
@@ -78,7 +79,8 @@ function Metodo(nombre,bodyContext) {
 }
 
 // This class defines a complete generic visitor for a parse tree produced by miniCSharpParser.
-function InterpreteCollector() {
+function InterpreteCollector(con) {
+    consola = con;
     almacenGlobal = [];
     ejecutar = false; //se indica que no se entrara en modo de ejecucion sino de recoleccion para el almacen.
     salirPorBreakOReturn = false;
@@ -594,9 +596,7 @@ InterpreteCollector.prototype.visitStatReturnRule = function(ctx) {
 
 // Visit a parse tree produced by miniCSharpParser#statReadRule.
 InterpreteCollector.prototype.visitStatReadRule = function(ctx) {
-    //READ PIZQ designator PDER PyCOMA
-
-    return null;
+    return this.visitChildren(ctx);
 };
 
 
@@ -604,13 +604,13 @@ InterpreteCollector.prototype.visitStatReadRule = function(ctx) {
 InterpreteCollector.prototype.visitStatWriteRule = function(ctx) {
     // WRITE PIZQ expr (COMA NUMBER)? PDER PyCOMA
 
-        var expr1 = this.visit(ctx.expr());
-        console.log("VALOR: "+ expr1);
 
-    return null;
+    var expr1 = this.visit(ctx.expr());
+    consola.value += expr1;
+
+
+    return this.visitChildren(ctx);
 };
-
-
 
 
 // Visit a parse tree produced by miniCSharpParser#statBlockRule.
@@ -628,7 +628,7 @@ InterpreteCollector.prototype.visitStatBlockRule = function(ctx) {
 
 // Visit a parse tree produced by miniCSharpParser#statPyComaRule.
 InterpreteCollector.prototype.visitStatPyComaRule = function(ctx) {
-    return ctx.PyCOMA().getSymbol();
+    return this.visitChildren(ctx);
 };
 
 
@@ -711,18 +711,21 @@ InterpreteCollector.prototype.visitActParsRule = function(ctx) {
 InterpreteCollector.prototype.visitConditionnRule = function(ctx) {
 //condTerm ( OR condTerm )*
     var condT1 = this.visit(ctx.condTerm(0)); //obtengo primer Variable 'TRUE' o 'FALSE'
-    var signoOR = ctx.OR().getSymbol();
-    var result = null;
+    var signoOR = ctx.OR().getSymbol().text;
 
     for(var i = 1; i <= ctx.condTerm().length - 1; i++){
 
         var condT2 = this.visit(ctx.condTerm(i));
 
-        result = operadores2[signoOR](condT1,condT2);
-
-        condT1 = result;
+        if(operadores2[signoOR](condT1,condT2)){
+            i++;//aumenta contador para asignar siguiente
+            if(i < ctx.condTerm().length){
+                condT1 = this.visit(ctx.condTerm(i)); //intercambia el primer confFact al que sigue para seguir evaluando.
+            }
         }
-    return result;
+
+    }
+    return condT1;
 
 };
 
@@ -733,19 +736,25 @@ InterpreteCollector.prototype.visitCondTermRule = function(ctx) {
 
 
    // condFact ( AND condFact )*
-    var condF1 = this.visit(ctx.condFact(0)); //obtengo primer Variable 'TRUE' o 'FALSE'
-    var signoAND = ctx.AND().getSymbol();
-    var result = null;
+        var condF1 = this.visit(ctx.condFact(0)); //obtengo primer Variable 'TRUE' o 'FALSE'
+        var signoAND = ctx.AND().getSymbol();
 
-    for(var i = 1; i <= ctx.condFact().length - 1; i++){
+        for(var i = 1; i <= ctx.condFact().length - 1; i++){
 
-        var condT2 = this.visit(ctx.condFact(i));
+            var condF2 = this.visit(ctx.condFact(i));
 
-        result = operadores2[signoAND](condF1,condT2);
+            if(operadores2[signoAND](condF1,condF2)){
+                i++;//aumenta contador para asignar siguiente
+                if(i < ctx.condFact().length){
+                    condF1 = this.visit(ctx.condFact(i)); //intercambia el primer confFact al que sigue para seguir evaluando.
+                }
 
-        condF1 = result;
-    }
-    return result;
+            }
+
+        }
+
+
+        return condF1; // retorna el ultimo elemento obtenido de condFact, de esta forma se verifica que todos sean TRUE;
 };
 
 
@@ -761,24 +770,7 @@ InterpreteCollector.prototype.visitCondFactRule = function(ctx) {
     if(ejecuntandoBlockAnidado){
         return ctx;
     }else {
-        if (signo === '==') {
-            return operadores2[signo](expr1, expr2);
-        }
-        if (signo === '!=') { // DIFERENTE
-            return operadores2[signo](expr1, expr2);
-        }
-        if (signo === '>') { //MAYORQUE
-            return operadores2[signo](expr1, expr2);
-        }
-        if (signo === '>=') { //MAYORIGUALQUE
-            return operadores2[signo](expr1, expr2);
-        }
-        if (signo === '<') { //MENORQUE
-            return operadores2[signo](expr1, expr2);
-        }
-        if (signo === '<=') { //MENORIGUALQUE
-            return operadores2[signo](expr1, expr2);
-        }
+        return operadores2[signo](expr1, expr2);
     }
 };
 
@@ -915,7 +907,6 @@ InterpreteCollector.prototype.visitFactNumberRule = function(ctx) {
     return numero;
 };
 
-
 // Visit a parse tree produced by miniCSharpParser#factCharConstRule.
 InterpreteCollector.prototype.visitFactCharConstRule = function(ctx) {
     return ctx.CHARCONST().getSymbol().text; //Retorna el caracter.
@@ -1001,37 +992,37 @@ InterpreteCollector.prototype.visitDesignatorRule = function(ctx) {
 
 // Visit a parse tree produced by miniCSharpParser#relopIgualigualRule.
 InterpreteCollector.prototype.visitRelopIgualigualRule = function(ctx) {
-    return ctx.IGUALIGUAL().getSymbol().text;
+    return ctx.IGUALIGUAL().getSymbol();
 };
 
 
 // Visit a parse tree produced by miniCSharpParser#relopDiferenteRule.
 InterpreteCollector.prototype.visitRelopDiferenteRule = function(ctx) {
-    return ctx.DIFERENTE().getSymbol().text;
+    return ctx.DIFERENTE().getSymbol();
 };
 
 
 // Visit a parse tree produced by miniCSharpParser#relopMayorqueRule.
 InterpreteCollector.prototype.visitRelopMayorqueRule = function(ctx) {
-    return ctx.MAYORQUE().getSymbol().text;
+    return ctx.MAYORQUE().getSymbol();
 };
 
 
 // Visit a parse tree produced by miniCSharpParser#relopMayorigualqueRule.
 InterpreteCollector.prototype.visitRelopMayorigualqueRule = function(ctx) {
-    return ctx.MAYORIGUALQUE().getSymbol().text;
+    return ctx.MAYORIGUALQUE().getSymbol();
 };
 
 
 // Visit a parse tree produced by miniCSharpParser#relopMenorQueRule.
 InterpreteCollector.prototype.visitRelopMenorQueRule = function(ctx) {
-    return ctx.MENORQUE().getSymbol().text;
+    return ctx.MENORQUE().getSymbol();
 };
 
 
 // Visit a parse tree produced by miniCSharpParser#relopMenorigualqueRule.
 InterpreteCollector.prototype.visitRelopMenorigualqueRule = function(ctx) {
-    return ctx.MENORIGUALQUE().getSymbol().text;
+    return ctx.MENORIGUALQUE().getSymbol();
 };
 
 
