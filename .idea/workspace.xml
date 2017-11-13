@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="04cf0e5a-deee-414d-9aa8-0d2f10b15b3c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interprete/InterpreteCollector.js" afterPath="$PROJECT_DIR$/interprete/InterpreteCollector.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,10 +19,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="InterpreteCollector.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="InterpreteCollector.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/interprete/InterpreteCollector.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
+            <state relative-caret-position="1288">
               <caret line="1001" column="71" lean-forward="true" selection-start-line="1001" selection-start-column="71" selection-end-line="1001" selection-end-column="71" />
               <folding />
             </state>
@@ -40,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="miniCSharpParser.g4" pinned="false" current-in-tab="false">
+      <file leaf-file-name="miniCSharpParser.g4" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/miniCSharpParser.g4">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="14">
-              <caret line="47" column="122" lean-forward="false" selection-start-line="47" selection-start-column="113" selection-end-line="47" selection-end-column="122" />
+            <state relative-caret-position="235">
+              <caret line="33" column="54" lean-forward="true" selection-start-line="33" selection-start-column="54" selection-end-line="33" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -599,11 +598,18 @@
       <option name="project" value="LOCAL" />
       <updated>1510536922029</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="relop arreglado">
+      <created>1510536987045</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1510536987045</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="624746000" />
+    <option name="totallyTimeSpent" value="625020000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -684,7 +690,8 @@
     <MESSAGE value="Se creo una lista &quot;pila de llamadas&quot; que guarda objetos de tipo Metodo, el metodo que esta en el tope de la pila es el que se esta ejecutando. Ademas elimine los metodos de busqueda, 3 metodos de busqueda borrados, solo quedó el de busqueda global." />
     <MESSAGE value="READ, WRITE, IF revisar" />
     <MESSAGE value="condition, condFact terminados" />
-    <option name="LAST_COMMIT_MESSAGE" value="condition, condFact terminados" />
+    <MESSAGE value="relop arreglado" />
+    <option name="LAST_COMMIT_MESSAGE" value="relop arreglado" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -981,18 +988,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/miniCSharpParser.g4">
+    <entry file="file://$PROJECT_DIR$/interprete/InterpreteCollector.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14">
-          <caret line="47" column="122" lean-forward="false" selection-start-line="47" selection-start-column="113" selection-end-line="47" selection-end-column="122" />
+        <state relative-caret-position="1288">
+          <caret line="1001" column="71" lean-forward="true" selection-start-line="1001" selection-start-column="71" selection-end-line="1001" selection-end-column="71" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/interprete/InterpreteCollector.js">
+    <entry file="file://$PROJECT_DIR$/miniCSharpParser.g4">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="1001" column="71" lean-forward="true" selection-start-line="1001" selection-start-column="71" selection-end-line="1001" selection-end-column="71" />
+        <state relative-caret-position="235">
+          <caret line="33" column="54" lean-forward="true" selection-start-line="33" selection-start-column="54" selection-end-line="33" selection-end-column="54" />
           <folding />
         </state>
       </provider>
