@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="04cf0e5a-deee-414d-9aa8-0d2f10b15b3c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interprete/InterpreteCollector.js" afterPath="$PROJECT_DIR$/interprete/InterpreteCollector.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,8 +23,8 @@
       <file leaf-file-name="InterpreteCollector.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/interprete/InterpreteCollector.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="624" column="16" lean-forward="true" selection-start-line="624" selection-start-column="16" selection-end-line="624" selection-end-column="16" />
+            <state relative-caret-position="68">
+              <caret line="739" column="56" lean-forward="true" selection-start-line="739" selection-start-column="56" selection-end-line="739" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -584,11 +585,18 @@
       <option name="project" value="LOCAL" />
       <updated>1510534826504</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="READ, WRITE, IF revisar">
+      <created>1510534861554</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1510534861554</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="623035000" />
+    <option name="totallyTimeSpent" value="624616000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -975,8 +983,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/interprete/InterpreteCollector.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="624" column="16" lean-forward="true" selection-start-line="624" selection-start-column="16" selection-end-line="624" selection-end-column="16" />
+        <state relative-caret-position="68">
+          <caret line="739" column="56" lean-forward="true" selection-start-line="739" selection-start-column="56" selection-end-line="739" selection-end-column="56" />
           <folding />
         </state>
       </provider>
