@@ -1,0 +1,73 @@
+class algo
+int x,y,z;
+
+string str1,str2;
+const int constante = 7;
+
+class registro{
+        string cadena;
+        string cadena2;
+        string cadena3;
+}
+
+{
+
+    int retornar3(){
+        x = 3;
+        y = 4;
+        return x * y;
+    }
+
+    void obtener()
+    int y;
+    {
+        y = 2 * retornar3();
+        return y;
+    }
+
+    void SetPoints(int jaja)
+    int y;
+    {
+        y = 2 * obtener() + jaja;
+    }
+}
+
+*****************************************************
+
+
+class algo
+int x,y,z;
+
+string str1,str2;
+const int constante = 7;
+
+class registro{
+        int numero;
+        string cadena2;
+        string cadena3;
+}
+
+{
+
+    int retornar3(){
+        x = 3;
+        y = 4;
+        return x * y;
+    }
+
+    void obtener()
+    int y;
+    {
+        y = 2 * retornar3();
+        return y;
+    }
+
+    void SetPoints(int jaja)
+    int y;
+    registro reg;
+    {
+        reg = new registro;
+        reg.numero = 5;
+        y = 2 * obtener() + jaja * reg.numero;
+    }
+}
