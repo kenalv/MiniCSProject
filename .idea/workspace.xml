@@ -23,8 +23,8 @@
       <file leaf-file-name="InterpreteCollector.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/interprete/InterpreteCollector.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="739" column="56" lean-forward="true" selection-start-line="739" selection-start-column="56" selection-end-line="739" selection-end-column="56" />
+            <state relative-caret-position="319">
+              <caret line="1001" column="71" lean-forward="true" selection-start-line="1001" selection-start-column="71" selection-end-line="1001" selection-end-column="71" />
               <folding />
             </state>
           </provider>
@@ -43,7 +43,7 @@
       <file leaf-file-name="miniCSharpParser.g4" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/miniCSharpParser.g4">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="422">
+            <state relative-caret-position="14">
               <caret line="47" column="122" lean-forward="false" selection-start-line="47" selection-start-column="113" selection-end-line="47" selection-end-column="122" />
               <folding />
             </state>
@@ -81,7 +81,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>visittypeCharDeclRule</find>
       <find>visitstatBreakRule</find>
       <find>visitfactNumberRule</find>
       <find>visitFactNumberRule</find>
@@ -111,6 +110,7 @@
       <find>visitstatWr</find>
       <find>visitstatWri</find>
       <find>visitstatReadRule</find>
+      <find>visitconds</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -592,11 +592,18 @@
       <option name="project" value="LOCAL" />
       <updated>1510534861554</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="condition, condFact terminados">
+      <created>1510536922029</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1510536922029</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="624616000" />
+    <option name="totallyTimeSpent" value="624746000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -676,7 +683,8 @@
     <MESSAGE value="asdasd" />
     <MESSAGE value="Se creo una lista &quot;pila de llamadas&quot; que guarda objetos de tipo Metodo, el metodo que esta en el tope de la pila es el que se esta ejecutando. Ademas elimine los metodos de busqueda, 3 metodos de busqueda borrados, solo quedó el de busqueda global." />
     <MESSAGE value="READ, WRITE, IF revisar" />
-    <option name="LAST_COMMIT_MESSAGE" value="READ, WRITE, IF revisar" />
+    <MESSAGE value="condition, condFact terminados" />
+    <option name="LAST_COMMIT_MESSAGE" value="condition, condFact terminados" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -975,7 +983,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/miniCSharpParser.g4">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
+        <state relative-caret-position="14">
           <caret line="47" column="122" lean-forward="false" selection-start-line="47" selection-start-column="113" selection-end-line="47" selection-end-column="122" />
           <folding />
         </state>
@@ -983,8 +991,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/interprete/InterpreteCollector.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="739" column="56" lean-forward="true" selection-start-line="739" selection-start-column="56" selection-end-line="739" selection-end-column="56" />
+        <state relative-caret-position="319">
+          <caret line="1001" column="71" lean-forward="true" selection-start-line="1001" selection-start-column="71" selection-end-line="1001" selection-end-column="71" />
           <folding />
         </state>
       </provider>
