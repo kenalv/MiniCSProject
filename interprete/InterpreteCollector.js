@@ -992,7 +992,7 @@ InterpreteCollector.prototype.visitDesignatorRule = function(ctx) {
 
 // Visit a parse tree produced by miniCSharpParser#relopIgualigualRule.
 InterpreteCollector.prototype.visitRelopIgualigualRule = function(ctx) {
-    return ctx.IGUALIGUAL().getSymbol();
+    return ctx.IGUALIGUAL().getSymbol().text;
 };
 
 
