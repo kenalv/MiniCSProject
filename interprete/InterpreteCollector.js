@@ -710,22 +710,18 @@ InterpreteCollector.prototype.visitActParsRule = function(ctx) {
 // Visit a parse tree produced by miniCSharpParser#conditionnRule.
 InterpreteCollector.prototype.visitConditionnRule = function(ctx) {
 //condTerm ( OR condTerm )*
+
     var condT1 = this.visit(ctx.condTerm(0)); //obtengo primer Variable 'TRUE' o 'FALSE'
-    var signoOR = ctx.OR().getSymbol().text;
 
+    var result = null;
     for(var i = 1; i <= ctx.condTerm().length - 1; i++){
-
+        var signoOR = ctx.OR(i-1).getSymbol().text;
         var condT2 = this.visit(ctx.condTerm(i));
+        result = operadores2[signoOR](condT1,condT2);
 
-        if(operadores2[signoOR](condT1,condT2)){
-            i++;//aumenta contador para asignar siguiente
-            if(i < ctx.condTerm().length){
-                condT1 = this.visit(ctx.condTerm(i)); //intercambia el primer confFact al que sigue para seguir evaluando.
-            }
-        }
-
+        condT1 = result;
     }
-    return condT1;
+    return result;
 
 };
 
@@ -737,24 +733,24 @@ InterpreteCollector.prototype.visitCondTermRule = function(ctx) {
 
    // condFact ( AND condFact )*
         var condF1 = this.visit(ctx.condFact(0)); //obtengo primer Variable 'TRUE' o 'FALSE'
-        var signoAND = ctx.AND().getSymbol();
+
+
+        var result = null;
+
 
         for(var i = 1; i <= ctx.condFact().length - 1; i++){
+            var signoAND = ctx.AND(i).getSymbol().text;
 
             var condF2 = this.visit(ctx.condFact(i));
 
-            if(operadores2[signoAND](condF1,condF2)){
-                i++;//aumenta contador para asignar siguiente
-                if(i < ctx.condFact().length){
-                    condF1 = this.visit(ctx.condFact(i)); //intercambia el primer confFact al que sigue para seguir evaluando.
-                }
+            result = operadores2[signoAND](condF1,condF2);
 
-            }
 
+            condF1 =result;
         }
 
 
-        return condF1; // retorna el ultimo elemento obtenido de condFact, de esta forma se verifica que todos sean TRUE;
+        return result; // retorna el ultimo elemento obtenido de condFact, de esta forma se verifica que todos sean TRUE;
 };
 
 
