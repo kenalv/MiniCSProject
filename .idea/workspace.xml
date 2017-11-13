@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="04cf0e5a-deee-414d-9aa8-0d2f10b15b3c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interprete/InterpreteCollector.js" afterPath="$PROJECT_DIR$/interprete/InterpreteCollector.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,8 +24,8 @@
       <file leaf-file-name="InterpreteCollector.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/interprete/InterpreteCollector.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1071">
-              <caret line="1027" column="0" lean-forward="true" selection-start-line="1027" selection-start-column="0" selection-end-line="1027" selection-end-column="0" />
+            <state relative-caret-position="1027">
+              <caret line="1024" column="47" lean-forward="false" selection-start-line="1024" selection-start-column="47" selection-end-line="1024" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -200,6 +201,7 @@
     <property name="$PROJECT_DIR$/miniCSharpParser.g4::/gen-visitor" value="true" />
     <property name="settings.editor.splitter.proportion" value="0.23212537" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/generated/InterpreterExecutor.js" />
+    <property name="ChangesBrowser.SHOW_FLATTEN" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -422,7 +424,7 @@
       <workItem from="1510345476300" duration="12918000" />
       <workItem from="1510371703069" duration="9081000" />
       <workItem from="1510385823497" duration="6487000" />
-      <workItem from="1510537230016" duration="136000" />
+      <workItem from="1510537230016" duration="365000" />
     </task>
     <task id="LOCAL-00001" summary="asdasd">
       <created>1509600572035</created>
@@ -487,11 +489,25 @@
       <option name="project" value="LOCAL" />
       <updated>1510537327944</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="condition, condFact terminados">
+      <created>1510537374131</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1510537374131</updated>
+    </task>
+    <task id="LOCAL-00011" summary="condition, condFact terminados">
+      <created>1510537505740</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1510537505740</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="624882000" />
+    <option name="totallyTimeSpent" value="625111000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -504,6 +520,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1376" height="784" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22869955" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286385" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -867,8 +884,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/interprete/InterpreteCollector.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
-          <caret line="1027" column="0" lean-forward="true" selection-start-line="1027" selection-start-column="0" selection-end-line="1027" selection-end-column="0" />
+        <state relative-caret-position="1027">
+          <caret line="1024" column="47" lean-forward="false" selection-start-line="1024" selection-start-column="47" selection-end-line="1024" selection-end-column="47" />
           <folding />
         </state>
       </provider>

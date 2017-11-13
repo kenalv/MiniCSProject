@@ -992,37 +992,37 @@ InterpreteCollector.prototype.visitDesignatorRule = function(ctx) {
 
 // Visit a parse tree produced by miniCSharpParser#relopIgualigualRule.
 InterpreteCollector.prototype.visitRelopIgualigualRule = function(ctx) {
-    return ctx.IGUALIGUAL().getSymbol();
+    return ctx.IGUALIGUAL().getSymbol().text;
 };
 
 
 // Visit a parse tree produced by miniCSharpParser#relopDiferenteRule.
 InterpreteCollector.prototype.visitRelopDiferenteRule = function(ctx) {
-    return ctx.DIFERENTE().getSymbol();
+    return ctx.DIFERENTE().getSymbol().text;
 };
 
 
 // Visit a parse tree produced by miniCSharpParser#relopMayorqueRule.
 InterpreteCollector.prototype.visitRelopMayorqueRule = function(ctx) {
-    return ctx.MAYORQUE().getSymbol();
+    return ctx.MAYORQUE().getSymbol().text;
 };
 
 
 // Visit a parse tree produced by miniCSharpParser#relopMayorigualqueRule.
 InterpreteCollector.prototype.visitRelopMayorigualqueRule = function(ctx) {
-    return ctx.MAYORIGUALQUE().getSymbol();
+    return ctx.MAYORIGUALQUE().getSymbol().text;
 };
 
 
 // Visit a parse tree produced by miniCSharpParser#relopMenorQueRule.
 InterpreteCollector.prototype.visitRelopMenorQueRule = function(ctx) {
-    return ctx.MENORQUE().getSymbol();
+    return ctx.MENORQUE().getSymbol().text;
 };
 
 
 // Visit a parse tree produced by miniCSharpParser#relopMenorigualqueRule.
 InterpreteCollector.prototype.visitRelopMenorigualqueRule = function(ctx) {
-    return ctx.MENORIGUALQUE().getSymbol();
+    return ctx.MENORIGUALQUE().getSymbol().text;
 };
 
 
