@@ -594,7 +594,9 @@ InterpreteCollector.prototype.visitStatReturnRule = function(ctx) {
 
 // Visit a parse tree produced by miniCSharpParser#statReadRule.
 InterpreteCollector.prototype.visitStatReadRule = function(ctx) {
-    return this.visitChildren(ctx);
+    //READ PIZQ designator PDER PyCOMA
+
+    return null;
 };
 
 
@@ -602,13 +604,13 @@ InterpreteCollector.prototype.visitStatReadRule = function(ctx) {
 InterpreteCollector.prototype.visitStatWriteRule = function(ctx) {
     // WRITE PIZQ expr (COMA NUMBER)? PDER PyCOMA
 
-
         var expr1 = this.visit(ctx.expr());
-        componente.value += expr1;
+        console.log("VALOR: "+ expr1);
 
-
-    return this.visitChildren(ctx);
+    return null;
 };
+
+
 
 
 // Visit a parse tree produced by miniCSharpParser#statBlockRule.
@@ -626,7 +628,7 @@ InterpreteCollector.prototype.visitStatBlockRule = function(ctx) {
 
 // Visit a parse tree produced by miniCSharpParser#statPyComaRule.
 InterpreteCollector.prototype.visitStatPyComaRule = function(ctx) {
-    return this.visitChildren(ctx);
+    return ctx.PyCOMA().getSymbol();
 };
 
 
