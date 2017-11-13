@@ -513,7 +513,7 @@ InterpreteCollector.prototype.visitStatDesignatorRule = function(ctx) {
 // Visit a parse tree produced by miniCSharpParser#statIfRule.
 InterpreteCollector.prototype.visitStatIfRule = function(ctx) {
     //IF PIZQ condition PDER statement ( ELSE statement )?
-    //
+    //asasd
     ejecuntandoBlockAnidado = false;
 
     var conditionResult = this.visit(ctx.condition()); //atrapa si es true o false
