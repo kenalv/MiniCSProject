@@ -516,23 +516,16 @@ InterpreteCollector.prototype.visitStatIfRule = function(ctx) {
 
     ejecuntandoBlockAnidado = false;
 
-
-
     var conditionResult = this.visit(ctx.condition()); //atrapa si es true o false
 
-    var ParentesisDespuesDelIf = ctx.PIZQ().length;
-    var ElseDespuesStatement = ctx.ELSE().length;
-
-    if(ParentesisDespuesDelIf > 0){
-        var statementBlock = this.visit(ctx.statement(0));
+    if (conditionResult){
+        this.visit(ctx.statement(0));
+    }
+    else{
+        this.visit(ctx.statement(1));
     }
 
-    if(ElseDespuesStatement > 0){
-        var statementBlock2 = this.visit(ctx.statement(1));
-    }
-
-
-    return this.visitChildren(ctx);
+    return null;
 };
 
 
